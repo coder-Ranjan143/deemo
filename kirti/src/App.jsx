@@ -1,9 +1,9 @@
 function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-    </div>
-  );
+    <h1 className="text-3xl font-bold text-blue-500">
+      Tailwind CSS Working
+    </h1>
+  )
 }
 
-export default App;
+export default App
