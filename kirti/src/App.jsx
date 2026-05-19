@@ -1,12 +1,21 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UnauthorizedVehicle from "./Pages1/UnauthorizedVehicle.jsx";
+import VehicleDetails from "./Pages1/VehicleDetails.jsx";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-white">
-      <h1 className="text-5xl text-cyan-400 font-bold">
-        Hello React Niranjan 🚀
-      </h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<UnauthorizedVehicle />} />
+
+        <Route
+          path="/vehicle/:id"
+          element={<VehicleDetails />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
