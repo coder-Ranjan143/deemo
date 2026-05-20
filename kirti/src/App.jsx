@@ -1,17 +1,17 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UnauthorizedVehicles from "./Pages2/UnauthorizedVehicles.jsx";
-import VehicleDetail from "./Pages2/VehicleDetail.jsx";
+import Non_permitted from "./Pages3/Non_permitted.jsx";
+import VehicleDetails from "./Pages3/VehicleDetails.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UnauthorizedVehicles />} />
+        <Route path="/" element={<Non_permitted />} />
 
         <Route
           path="/vehicle/:id"
-          element={<VehicleDetail />}
+          element={<VehicleDetails />}
         />
       </Routes>
     </BrowserRouter>
