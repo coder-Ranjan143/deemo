@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import VehicleData from "./data/VehicleData";
+import VehiclesData from "./data/VehiclesData";
 
-function VehicleDetails() {
+function VehicleDetail() {
   const { id } = useParams();
 
-  const vehicle = VehicleData.find(
+  const vehicle = VehiclesData.find(
     (item) => item.id === Number(id)
   );
 
@@ -40,4 +40,4 @@ function VehicleDetails() {
   );
 }
 
-export default VehicleDetails;
+export default VehicleDetail;

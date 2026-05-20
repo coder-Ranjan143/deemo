@@ -1,4 +1,4 @@
-const VehicleData = [
+const VehiclesData = [
   {
     id: 1,
     unitType: "FL Bottling Unit",
@@ -34,4 +34,4 @@ const VehicleData = [
   },
 ]
 
-export default VehicleData
+export default VehiclesData

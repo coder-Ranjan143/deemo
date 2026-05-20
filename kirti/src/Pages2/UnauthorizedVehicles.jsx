@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import VehicleData from "./data/VehicleData";
+import VehiclesData from "./data/VehiclesData";
 
 import * as XLSX from "xlsx";
 
@@ -19,7 +19,7 @@ import {
   FileText,
 } from "lucide-react";
 
-function UnauthorizedVehicle() {
+function UnauthorizedVehicles() {
 
   const navigate = useNavigate();
 
@@ -55,7 +55,7 @@ function UnauthorizedVehicle() {
 
   // FILTER LOGIC
 
-  const filteredData = VehicleData.filter(
+  const filteredData = VehiclesData.filter(
     (item) => {
 
       const today = new Date();
@@ -478,7 +478,7 @@ function UnauthorizedVehicle() {
 
                 ...new Set(
 
-                  VehicleData.map(
+                  VehiclesData.map(
                     (item) =>
                       item.distilleryName
                   )
@@ -521,7 +521,7 @@ function UnauthorizedVehicle() {
                 Select Distillery
               </option>
 
-              {VehicleData
+              {VehiclesData
                 .filter((item) =>
 
                   selectedGroup
@@ -828,4 +828,4 @@ function UnauthorizedVehicle() {
   );
 }
 
-export default UnauthorizedVehicle;
+export default UnauthorizedVehicles;
