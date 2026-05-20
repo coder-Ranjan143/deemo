@@ -1,110 +1,120 @@
 import Card from "../Components/Card";
+import Heading from "../Components/Heading";
 import Header from "../Components/Header";
 import Navbar from "../Components/Navbar";
-import { CameraOff } from "lucide-react";
-import { Radar } from "lucide-react";
-import { Ban } from "lucide-react";
-import { BadgeCheck } from "lucide-react";
-
+import AlertBox from "../Components/AlertBox";
 
 import {
     ShieldAlert,
+    CameraOff,
     Truck,
-    Factory,
-    Warehouse,
+    Ban,
+    BadgeCheck,
 } from "lucide-react";
 
 function Dashboard() {
     return (
-
         <div className="bg-gray-100 min-h-screen">
 
-            {/* Header */}
             <Header />
-
-            {/* Navbar */}
             <Navbar />
+            <Heading />
 
-            {/* Cards */}
-            <div
-                className="
-          flex
-          flex-wrap
-          gap-6
-          p-6
-        "
-            >
+            <div className="
+                grid
+                grid-cols-1
+                xl:grid-cols-3
+                gap-4
+                p-4
+                md:p-6
+                items-start
+            ">
 
-                <Card
-                    icon={
-                        <div className="p-2 bg-red-100 rounded-full">
-                            <ShieldAlert size={28} className="text-red-600" />
-                        </div>
-                    }
-                    title="Unauthorized Vehicle Entry"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                {/* LEFT SIDE CARDS */}
+                <div className="
+                    xl:col-span-2
+                    grid
+                    grid-cols-1
+                    sm:grid-cols-2
+                    gap-4
+                    items-stretch
+                ">
 
-                <Card
-                    icon={<CameraOff size={28} className="text-red-500" />}
-                    title="Critical Camera Down"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                    <Card
+                        icon={<ShieldAlert size={22} className="text-yellow-600" />}
+                        title="Unauthorized Vehicle Entry"
+                        value="641"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-red-100"
+                    />
 
-                <Card
-                    icon={<Truck size={28} className="text-blue-500" />}
-                    title="Vehicle tracked at Loading Zone"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                    <Card
+                        icon={<CameraOff size={22} className="text-blue-600" />}
+                        title="Critical Camera Down"
+                        value="109"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-blue-100"
+                    />
 
-                <Card
-                    icon={<Ban size={28} className="text-red-500" />}
-                    title="Non permitted Hours"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                    <Card
+                        icon={<Truck size={22} className="text-pink-600" />}
+                        title="Vehicle tracked at Loading Zone"
+                        value="0"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-pink-100"
+                    />
 
-                <Card
-                    icon={<Ban size={28} className="text-red-500" />}
-                    title="Unauthorized Vehicles Entry"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                    <Card
+                        icon={<Ban size={22} className="text-green-600" />}
+                        title="Non Permitted Hours"
+                        value="0"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-green-100"
+                    />
 
-                <Card
-                    icon={<BadgeCheck size={28} className="text-green-500" />}
-                    title="Permit Validated"
-                    value="120"
-                    bgColor="bg-white"
-                    titleColor="text-blue-800"
-                    valueColor="text-blue-900"
-                    iconBg="bg-blue-100"
-                />
+                    <Card
+                        icon={<Ban size={22} className="text-purple-600" />}
+                        title="Unauthorized Vehicle Exit"
+                        value="709"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-purple-100"
+                    />
 
+                    <Card
+                        icon={<BadgeCheck size={22} className="text-red-500" />}
+                        title="Permit Validation"
+                        value="0"
+                        bgColor="bg-white"
+                        titleColor="text-blue-900"
+                        valueColor="text-red-800"
+                        iconBg="bg-blue-100"
+                        hoverEffect="from-red-100"
+                    />
 
+                </div>
+
+                {/* RIGHT SIDE ALERT BOX */}
+                <div className="xl:col-span-1 flex">
+                    <AlertBox />
+                </div>
 
             </div>
-
         </div>
-
     );
 }
 
