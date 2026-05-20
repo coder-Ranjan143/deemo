@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UnauthorizedVehicle from "./Pages1/UnauthorizedVehicle.jsx";
-import VehicleDetails from "./Pages1/VehicleDetails.jsx";
+import UnauthorizedVehicle from "./Pages2/UnauthorizedVehicle.jsx";
+import VehicleDetails from "./Pages2/VehicleDetails.jsx";
 
 function App() {
   return (

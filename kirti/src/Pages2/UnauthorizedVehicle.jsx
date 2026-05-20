@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import VehicleData from "../Pages1/data/VehicleData.jsx";
+import VehicleData from "./data/VehicleData";
 
 import * as XLSX from "xlsx";
 
@@ -304,7 +304,7 @@ function UnauthorizedVehicle() {
       <div className="flex justify-between items-center mb-5 flex-wrap gap-4">
 
         <h1 className="text-2xl font-bold text-blue-700">
-          All Unauthorized Vehicle Entry
+          Vehicle tracked at Loading Zone
         </h1>
 
         <div className="flex gap-3 items-center flex-wrap">
