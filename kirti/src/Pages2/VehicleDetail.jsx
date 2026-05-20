@@ -40,4 +40,5 @@ function VehicleDetail() {
   );
 }
 
+
 export default VehicleDetail;

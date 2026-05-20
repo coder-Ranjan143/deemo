@@ -34,4 +34,5 @@ const VehiclesData = [
   },
 ]
 
+
 export default VehiclesData
