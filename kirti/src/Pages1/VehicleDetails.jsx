@@ -34,6 +34,7 @@ function VehicleDetails() {
             <p><strong>Status:</strong> {vehicle.authorizedStatus}</p>
             <p><strong>Date:</strong> {vehicle.createdAt}</p>
           </div>
+          
         </div>
       </div>
     </div>
