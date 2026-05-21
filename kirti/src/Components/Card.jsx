@@ -13,14 +13,18 @@ function Card({
             relative
             overflow-hidden
             w-full
-            min-h-[160px]
-            p-4
-            rounded-2xl
-            shadow-md
+            h-full
+            min-h-[105px]
+            p-3
+            sm:min-h-[115px]
+            rounded-xl
+            border
+            border-gray-200
+            shadow-sm
             transition-all
             duration-300
             hover:scale-[1.02]
-            hover:shadow-xl
+            hover:shadow-md
             cursor-pointer
             group
             ${bgColor}
@@ -30,7 +34,7 @@ function Card({
             <div className={`
                 absolute
                 inset-0
-                rounded-2xl
+                rounded-xl
                 bg-gradient-to-br
                 ${hoverEffect}
                 to-transparent
@@ -43,17 +47,17 @@ function Card({
             <div className="relative z-10">
 
                 <div className={`
-                    w-12 h-12 flex items-center justify-center rounded-xl mb-4
+                    w-9 h-9 flex items-center justify-center rounded-full mb-3
                     ${iconBg}
                 `}>
                     {icon}
                 </div>
 
-                <h2 className={`text-lg font-semibold ${titleColor}`}>
+                <h2 className={`break-words text-base font-bold leading-snug md:text-lg ${titleColor}`}>
                     {title}
                 </h2>
 
-                <p className={`mt-2 text-2xl font-bold ${valueColor}`}>
+                <p className={`mt-2 text-lg font-bold md:text-xl ${valueColor}`}>
                     {value}
                 </p>
 

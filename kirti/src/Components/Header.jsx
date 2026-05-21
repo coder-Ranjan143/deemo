@@ -5,44 +5,44 @@ import AdminImage from "../Image/Super_Admin_Image.jpeg";
 const Header = () => {
     return (
 
-        <header className="bg-white px-6 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <header className="bg-white px-4 py-3 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4">
 
                 <img
                     src={LogoImage}
                     alt="Smart City Logo"
-                    className="w-16 h-16 object-contain"
+                    className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
                 />
 
-                <div>
-                    <h1 className="text-xl text-red-900 leading-tight">
+                <div className="min-w-0">
+                    <h1 className="text-base font-semibold text-red-800 leading-tight sm:text-lg">
                         Integrated Command & Control Center
                     </h1>
 
-                    <p className="text-sm text-gray-700 font-light">
+                    <p className="text-xs text-gray-700 font-light sm:text-sm">
                         Department of Excise, Madhya Pradesh
                     </p>
                 </div>
 
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
 
-                <div className="text-right">
+                <div className="min-w-0 text-left sm:text-right">
                     <h2 className="text-sm text-gray-1200">
                         Super Admin
                     </h2>
 
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-600 whitespace-nowrap">
                         mpexcisejcc@gmail.com
                     </p>
                 </div>
 
-                <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-yellow-400">
                     <img
                         src={AdminImage}
                         alt="Admin"
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover"
                     />
                 </div>
 

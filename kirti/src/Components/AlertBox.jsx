@@ -21,31 +21,43 @@ const alerts = [
         message: "Camera gate 'exit' detected a vehicle at DCR Distillery — Vehicle No: MP15ME7297.",
         location: "DCR Distillery | 03:03 PM",
     },
+    {
+        message: "Camera gate 'exit' detected a vehicle at Gulshan Polyols — Vehicle No: M0MP4.",
+        location: "Gulshan Polyols | 03:03 PM",
+    },
+    {
+        message: "Camera gate 'exit' detected a vehicle at Vindhyachal Distilleries — Vehicle No: MP04YL3694.",
+        location: "Vindhyachal Distilleries | 03:02 PM",
+    },
 ];
 
 const AlertBox = () => {
     return (
         <div className="
             w-full
+            h-full
             bg-white
-            rounded-2xl
-            shadow-md
-            p-5
+            rounded-xl
+            border
+            border-gray-200
+            shadow-sm
+            p-4
             flex
             flex-col
-            max-h-[600px]
+            max-h-[520px]
+            lg:max-h-none
         ">
 
             {/* Heading */}
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-lg font-semibold text-gray-800 sm:text-xl">
                     Latest ANPR Alerts
                 </h3>
             </div>
 
             {/* Alerts */}
-            <div className="flex-1 overflow-y-auto space-y-4 pr-1">
+            <div className="flex-1 overflow-y-auto space-y-2 pr-1">
 
                 {alerts.map((alert, index) => (
                     <div
@@ -53,19 +65,19 @@ const AlertBox = () => {
                         className="
                             border
                             border-gray-200
-                            rounded-xl
-                            p-4
+                            rounded-lg
                             bg-red-50
+                            p-3
                             hover:bg-red-100
                             transition-all
                             duration-300
                         "
                     >
-                        <p className="text-sm text-gray-800 leading-7">
+                        <p className="break-words text-xs font-medium text-gray-800 leading-5 sm:text-sm">
                             {alert.message}
                         </p>
 
-                        <p className="text-xs text-gray-500 mt-2">
+                        <p className="break-words text-[11px] text-gray-500 mt-1 sm:text-xs">
                             Location: {alert.location}
                         </p>
                     </div>
@@ -73,7 +85,7 @@ const AlertBox = () => {
 
             </div>
 
-            <div className="mt-4">
+            <div className="mt-2">
                 <Footer />
             </div>
 

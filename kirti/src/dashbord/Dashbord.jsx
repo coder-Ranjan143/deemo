@@ -14,7 +14,7 @@ import {
 
 function Dashboard() {
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="min-h-screen overflow-x-hidden bg-gray-100">
 
             <Header />
             <Navbar />
@@ -23,20 +23,21 @@ function Dashboard() {
             <div className="
                 grid
                 grid-cols-1
-                xl:grid-cols-3
-                gap-4
+                lg:grid-cols-2
+                gap-3
                 p-4
-                md:p-6
-                items-start
+                md:p-5
+                items-stretch
             ">
 
                 {/* LEFT SIDE CARDS */}
                 <div className="
-                    xl:col-span-2
                     grid
                     grid-cols-1
                     sm:grid-cols-2
-                    gap-4
+                    gap-3
+                    lg:h-[400px]
+                    auto-rows-fr
                     items-stretch
                 ">
 
@@ -45,7 +46,7 @@ function Dashboard() {
                         title="Unauthorized Vehicle Entry"
                         value="641"
                         bgColor="bg-white"
-                        titleColor="text-blue-900"
+                        titleColor="text-red-950"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
@@ -67,7 +68,7 @@ function Dashboard() {
                         title="Vehicle tracked at Loading Zone"
                         value="0"
                         bgColor="bg-white"
-                        titleColor="text-blue-900"
+                        titleColor="text-red-950"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-pink-100"
@@ -78,7 +79,7 @@ function Dashboard() {
                         title="Non Permitted Hours"
                         value="0"
                         bgColor="bg-white"
-                        titleColor="text-blue-900"
+                        titleColor="text-gray-800"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-green-100"
@@ -100,7 +101,7 @@ function Dashboard() {
                         title="Permit Validation"
                         value="0"
                         bgColor="bg-white"
-                        titleColor="text-blue-900"
+                        titleColor="text-red-950"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
@@ -109,7 +110,7 @@ function Dashboard() {
                 </div>
 
                 {/* RIGHT SIDE ALERT BOX */}
-                <div className="xl:col-span-1 flex">
+                <div className="flex lg:h-[400px]">
                     <AlertBox />
                 </div>
 
