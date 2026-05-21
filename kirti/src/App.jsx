@@ -1,9 +1,9 @@
-import Dashbord from "./dashbord/Dashbord.jsx";
+import Excutive from "./dashbord/pages/Excutive";
 
 function App() {
   return (
     <div>
-      <Dashbord />
+      <Excutive />
     </div>
   );
 }

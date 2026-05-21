@@ -31,7 +31,7 @@ const alerts = [
     },
 ];
 
-const AlertBox = () => {
+const AlertBox = ({heading}) => {
     return (
         <div className="
             w-full
@@ -52,7 +52,7 @@ const AlertBox = () => {
             <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <h3 className="text-lg font-semibold text-gray-800 sm:text-xl">
-                    Latest ANPR Alerts
+                    {heading}
                 </h3>
             </div>
 

@@ -1,24 +1,19 @@
-import Card from "../Components/Card";
-import Heading from "../Components/Heading";
-import Header from "../Components/Header";
-import Navbar from "../Components/Navbar";
-import AlertBox from "../Components/AlertBox";
-
+import Card from "../../../../Components/Card";
+import AlertBox from "../../../../Components/AlertBox";
+import Slider2_Heading from "./Slider2_Heading";
 import {
-    ShieldAlert,
-    CameraOff,
-    Truck,
-    Ban,
-    BadgeCheck,
+    Clock3,
+    Route,
+    MapPinOff,
+    Radar,
+    Ticket,
+    LocateOff,
 } from "lucide-react";
 
-function Dashboard() {
+function Slider2() {
     return (
         <div className="min-h-screen overflow-x-hidden bg-gray-100">
-
-            <Header />
-            <Navbar />
-            <Heading />
+            <Slider2_Heading />
 
             <div className="
                 grid
@@ -42,19 +37,19 @@ function Dashboard() {
                 ">
 
                     <Card
-                        icon={<ShieldAlert size={22} className="text-yellow-600" />}
-                        title="Unauthorized Vehicle Entry"
+                        icon={<Clock3 size={22} className="text-yellow-600" />}
+                        title="Vehicle Delayed"
                         value="641"
                         bgColor="bg-white"
-                        titleColor="text-red-950"
+                        titleColor="text-brown-950"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
 
                     <Card
-                        icon={<CameraOff size={22} className="text-blue-600" />}
-                        title="Critical Camera Down"
+                        icon={<Route size={22} className="text-blue-600" />}
+                        title="Route Deviation"
                         value="109"
                         bgColor="bg-white"
                         titleColor="text-blue-900"
@@ -64,19 +59,20 @@ function Dashboard() {
                     />
 
                     <Card
-                        icon={<Truck size={22} className="text-pink-600" />}
-                        title="Vehicle tracked at Loading Zone"
+                        icon={<MapPinOff size={22} className="text-pink-600" />}
+                        title="Vehicle Not Reached Destination"
+
                         value="0"
                         bgColor="bg-white"
-                        titleColor="text-red-950"
+                        titleColor="text-pink-950"
                         valueColor="text-red-800"
                         iconBg="bg-blue-100"
                         hoverEffect="from-pink-100"
                     />
 
                     <Card
-                        icon={<Ban size={22} className="text-green-600" />}
-                        title="Non Permitted Hours"
+                        icon={<Radar size={22} className="text-green-600" />}
+                        title="Active GPS Devices"
                         value="0"
                         bgColor="bg-white"
                         titleColor="text-gray-800"
@@ -86,8 +82,8 @@ function Dashboard() {
                     />
 
                     <Card
-                        icon={<Ban size={22} className="text-purple-600" />}
-                        title="Unauthorized Vehicle Exit"
+                        icon={<Ticket size={22} className="text-purple-600" />}
+                        title="Live TP Pass Count"
                         value="709"
                         bgColor="bg-white"
                         titleColor="text-blue-900"
@@ -97,8 +93,8 @@ function Dashboard() {
                     />
 
                     <Card
-                        icon={<BadgeCheck size={22} className="text-red-500" />}
-                        title="Permit Validation"
+                        icon={<LocateOff size={22} className="text-red-500" />}
+                        title="Inactive GPS Devices"
                         value="0"
                         bgColor="bg-white"
                         titleColor="text-red-950"
@@ -111,7 +107,7 @@ function Dashboard() {
 
                 {/* RIGHT SIDE ALERT BOX */}
                 <div className="flex lg:h-[400px]">
-                    <AlertBox />
+                    <AlertBox heading="Latest VTS Alerts" />
                 </div>
 
             </div>
@@ -119,4 +115,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default Slider2;
