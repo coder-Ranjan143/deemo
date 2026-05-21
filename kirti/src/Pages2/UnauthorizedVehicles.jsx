@@ -304,7 +304,7 @@ function UnauthorizedVehicles() {
       <div className="flex justify-between items-center mb-5 flex-wrap gap-4">
 
         <h1 className="text-2xl font-bold text-blue-700">
-          Vehicle tracked at Loading Zone
+          Non-Permitted Hours Alerts
         </h1>
 
         <div className="flex gap-3 items-center flex-wrap">
