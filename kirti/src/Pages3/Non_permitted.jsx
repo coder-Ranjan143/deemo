@@ -456,9 +456,9 @@ function Non_permitted() {
 
       {showFilter && (
 
-        <div className="bg-white p-5 rounded-xl shadow-md mb-5 border">
+        <div className="bg-white p-5 rounded-xl shadow-md mb-5 border border-gray-500">
 
-          <div className="grid grid-cols-1 md:grid-cols-8 gap-4">
+          <div className="flex flex-wrap gap-4 items-center">
 
             {/* GROUP */}
 
