@@ -14,7 +14,18 @@ import {
 
 const Navbar = () => {
     return (
-        <nav className="bg-red-800 text-white px-4 py-2.5 sm:px-6">
+        <nav className="
+    fixed
+    top-[78px]
+    left-0
+    w-full
+    z-40
+    bg-red-800
+    text-white
+    px-4
+    py-2.5
+    sm:px-6
+">
             <div className="flex items-center gap-4 overflow-x-auto pb-1 text-sm font-medium whitespace-nowrap sm:gap-5 lg:justify-center lg:overflow-visible lg:pb-0">
 
                 <a href="/" className="flex shrink-0 items-center gap-1 text-white hover:text-gray-200">

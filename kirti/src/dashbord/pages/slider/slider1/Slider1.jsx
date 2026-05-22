@@ -1,6 +1,4 @@
 import Card from "../../../../Components/Card";
-import Header from "../../../../Components/Header";
-import Navbar from "../../../../Components/Navbar";
 import AlertBox from "../../../../Components/AlertBox";
 import Slider1_Heading from "./Slider1_Heading";
 
@@ -14,32 +12,15 @@ import {
 
 function Slider1() {
     return (
-        <div className="min-h-screen overflow-x-hidden bg-gray-100">
+        <div className="h-screen overflow-hidden overflow-x-hidden bg-gray-100">
 
-            <Header />
-            <Navbar />
+            {/* Heading */}
             <Slider1_Heading />
 
-            <div className="
-                grid
-                grid-cols-1
-                lg:grid-cols-2
-                gap-3
-                p-4
-                md:p-5
-                items-stretch
-            ">
+            <div className="grid grid-cols-1  lg:grid-cols-2 gap-3 p-4 md:p-5 items-stretch">
 
                 {/* LEFT SIDE CARDS */}
-                <div className="
-                    grid
-                    grid-cols-1
-                    sm:grid-cols-2
-                    gap-3
-                    lg:h-[400px]
-                    auto-rows-fr
-                    items-stretch
-                ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:h-[400px] auto-rows-fr items-stretch">
 
                     <Card
                         icon={<ShieldAlert size={22} className="text-yellow-600" />}

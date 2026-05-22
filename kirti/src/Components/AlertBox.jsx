@@ -31,7 +31,7 @@ const alerts = [
     },
 ];
 
-const AlertBox = ({heading}) => {
+const AlertBox = ({ heading }) => {
     return (
         <div className="
             w-full
@@ -85,7 +85,7 @@ const AlertBox = ({heading}) => {
 
             </div>
 
-            <div className="mt-2">
+            <div>
                 <Footer />
             </div>
 

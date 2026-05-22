@@ -1,6 +1,6 @@
 import Card from "../../../../Components/Card";
-import AlertBox from "../../../../Components/AlertBox";
 import Slider3_Heading from "./Slider3_Heading";
+import Slider3_Map from "./Slider3_Map";
 import {
     Route,
     ShieldAlert,
@@ -13,6 +13,8 @@ import {
 function Slider3() {
     return (
         <div className="min-h-screen overflow-x-hidden bg-gray-100">
+
+            {/* Heading */}
             <Slider3_Heading />
 
             <div className="
@@ -105,9 +107,9 @@ function Slider3() {
 
                 </div>
 
-                {/* RIGHT SIDE ALERT BOX */}
+                {/* RIGHT SIDE MAP */}
                 <div className="flex lg:h-[400px]">
-                    {/* <AlertBox /> */}
+                    <Slider3_Map />
                 </div>
 
             </div>

@@ -5,7 +5,24 @@ import AdminImage from "../Image/Super_Admin_Image.jpeg";
 const Header = () => {
     return (
 
-        <header className="bg-white px-4 py-3 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <header className="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    bg-white
+    px-4
+    py-3
+    sm:px-6
+    flex
+    flex-col
+    gap-3
+    sm:flex-row
+    sm:items-center
+    sm:justify-between
+    shadow-sm
+">
             <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4">
 
                 <img
