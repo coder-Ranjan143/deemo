@@ -27,8 +27,15 @@ import VehicleMovementDetails from "./Vehicle_Movement/pages/VehicleMovementDeta
 import AlertTablePage from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertTablePage.jsx";
 import AlertHeader from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertHeader.jsx";
 import AlertDetails from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertDetails.jsx";
-
-
+import EscalateAlertDetails from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertDetails.jsx";
+import EscalateAlertHeader from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertHeader.jsx";
+import EscalateAlertTablePage from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertTablePage.jsx";
+import ResolveAlertDetails from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertDetails.jsx";
+import ResolveAlertHeader from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertHeader.jsx";
+import ResolveAlertTablePage from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertTablePage.jsx";
+import PendingAlertDetails from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertDetails.jsx";
+import PendingAlertHeader from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertHeader.jsx";
+import PendingAlertTablePage from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertTablePage.jsx";
 
 function App() {
   return (
@@ -122,8 +129,6 @@ function App() {
       </Routes> */}
 
 
-
-
         {/* Camera */}
 
       {/* <Dis_Camera_page/>
@@ -137,7 +142,6 @@ function App() {
           element={<CameraDetails />}
         />
       </Routes> */}
-
 
 
          {/* GPS */}
@@ -155,8 +159,6 @@ function App() {
       </Routes> */}
 
 
-
-
        {/* Vehicle Movement */}
 
       {/* <VehicleMovementPage/>
@@ -172,12 +174,10 @@ function App() {
       </Routes> */}
 
 
+      {/* Total Alert */}
 
 
-      {/* Vehicle Movement */}
-
-
-      <AlertHeader/>
+      {/* <AlertHeader/>
       <Routes>
         <Route
           path="/"
@@ -187,10 +187,51 @@ function App() {
           path="/details/:id"
           element={<AlertDetails />}
         />
+      </Routes> */}
+
+
+        {/* Escalated Alert */}
+
+      {/* <EscalateAlertHeader/>
+      <Routes>
+        <Route
+          path="/"
+          element={<EscalateAlertTablePage />}
+        />
+        <Route
+          path="/details/:id"
+          element={<EscalateAlertDetails />}
+        />
+      </Routes> */}
+
+
+        {/* Resolve Alert */}
+
+      {/* <ResolveAlertHeader/>
+      <Routes>
+        <Route
+          path="/"
+          element={<ResolveAlertTablePage />}
+        />
+        <Route
+          path="/details/:id"
+          element={<ResolveAlertDetails />}
+        />
+      </Routes> */}
+
+      {/* Pending Alert */}
+
+      <PendingAlertHeader/>
+      <Routes>
+        <Route
+          path="/"
+          element={<PendingAlertTablePage />}
+        />
+        <Route
+          path="/details/:id"
+          element={<PendingAlertDetails />}
+        />
       </Routes>
-
-
-
 
       
     </BrowserRouter>
