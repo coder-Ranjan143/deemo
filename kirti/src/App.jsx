@@ -21,6 +21,9 @@ import CameraDetails from "./Camera/pages/CameraDetails.jsx";
 import Gpstrack from "./GPS/pages/gpstrack.jsx";
 import GpstrackPage from "./GPS/pages/GpstrackPage.jsx";
 import GpsDetails from "./GPS/pages/GpsDetails.jsx";
+import VehicleMovement from "./Vehicle_Movement/pages/VehicleMovement.jsx";
+import VehicleMovementPage from "./Vehicle_Movement/pages/VehicleMovementPage.jsx";
+import VehicleMovementDetails from "./Vehicle_Movement/pages/VehicleMovementDetails.jsx";
 
 
 function App() {
@@ -135,7 +138,7 @@ function App() {
 
          {/* GPS */}
 
-      <GpstrackPage/>
+      {/* <GpstrackPage/>
       <Routes>
         <Route
           path="/"
@@ -144,6 +147,23 @@ function App() {
         <Route
           path="/details/:id"
           element={<GpsDetails />}
+        />
+      </Routes> */}
+
+
+
+
+       {/* Vehicle Movement */}
+
+      <VehicleMovementPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleMovement />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleMovementDetails />}
         />
       </Routes>
       
