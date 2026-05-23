@@ -85,7 +85,7 @@ const AlertBox = ({ heading }) => {
 
             </div>
 
-            <div>
+            <div className="mt-2">
                 <Footer />
             </div>
 
