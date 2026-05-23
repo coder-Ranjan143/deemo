@@ -24,6 +24,10 @@ import GpsDetails from "./GPS/pages/GpsDetails.jsx";
 import VehicleMovement from "./Vehicle_Movement/pages/VehicleMovement.jsx";
 import VehicleMovementPage from "./Vehicle_Movement/pages/VehicleMovementPage.jsx";
 import VehicleMovementDetails from "./Vehicle_Movement/pages/VehicleMovementDetails.jsx";
+import AlertTablePage from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertTablePage.jsx";
+import AlertHeader from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertHeader.jsx";
+import AlertDetails from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertDetails.jsx";
+
 
 
 function App() {
@@ -155,7 +159,7 @@ function App() {
 
        {/* Vehicle Movement */}
 
-      <VehicleMovementPage/>
+      {/* <VehicleMovementPage/>
       <Routes>
         <Route
           path="/"
@@ -165,7 +169,29 @@ function App() {
           path="/details/:id"
           element={<VehicleMovementDetails />}
         />
+      </Routes> */}
+
+
+
+
+      {/* Vehicle Movement */}
+
+
+      <AlertHeader/>
+      <Routes>
+        <Route
+          path="/"
+          element={<AlertTablePage />}
+        />
+        <Route
+          path="/details/:id"
+          element={<AlertDetails />}
+        />
       </Routes>
+
+
+
+
       
     </BrowserRouter>
     

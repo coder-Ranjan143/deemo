@@ -12,7 +12,7 @@ function Gpstrack() {
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
-          <thead className="bg-[#7b1028] text-white">
+          <thead className="bg-red-800 text-white">
             <tr>
               <th className="p-4 text-left">Distellery</th>
               <th className="p-4 text-left">Date</th>

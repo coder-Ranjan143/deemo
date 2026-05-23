@@ -2,12 +2,13 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import VehicleData from "../data/VehicleData";
+import AlertData from "../data/AlertData";
+import ExportDropdown from "../component/ExportDropdown";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
 
-function UnauthorizedVehicle6() {
+function AlertTablePage() {
   const navigate = useNavigate();
 
   return (
@@ -19,23 +20,22 @@ function UnauthorizedVehicle6() {
               <th className="p-4 text-left">#</th>
               <th className="p-4 text-left">UNIT TYPE</th>
               <th className="p-4 text-left">DISTILLERY NAME</th>
-              <th className="p-4 text-left">CAMERA NAME</th>
-              <th className="p-4 text-left">EVENT TYPE</th>
-              <th className="p-4 text-left">EVENT IMAGES</th>
-              <th className="p-4 text-left">EVENT SNAPSHOT</th>
-              <th className="p-4 text-left">AUTHORIZED STATUS</th>
-              <th className="p-4 text-left">CREATED AT</th>
+              <th className="p-4 text-left">TYPE</th>
+              <th className="p-4 text-left">HANDLE BY</th>
+              <th className="p-4 text-left">DESCRIPTION</th>
+              <th className="p-4 text-left">STATUS</th>
+              <th className="p-4 text-left">CLOSED BY</th>
               <th className="p-4 text-left">ACTION</th>
             </tr>
           </thead>
 
           <tbody>
-            {VehicleData.map((item, index) => (
+            {AlertData.map((item, index) => (
               <tr
                 key={item.id}
                 className="border-b hover:bg-gray-50 transition"
               >
-                <td className="p-4">{index + 1}</td>
+                <td className="p-4">{item.cn}</td>
 
                 <td className="p-4 text-gray-700">
                   {item.unitType}
@@ -46,24 +46,26 @@ function UnauthorizedVehicle6() {
                 </td>
 
                 <td className="p-4 text-gray-700">
-                  {item.cameraName}
+                  {item.type}
                 </td>
 
                 <td className="p-4 text-green-600 font-semibold">
-                  {item.eventType}
+                  {item.handleBy}
                 </td>
 
-                <td className="p-4">{item.eventImage}</td>
-
-                <td className="p-4">{item.eventSnapshot}</td>
-
+                <td className="p-4 text-green-600 font-semibold">
+                  {item.description}
+                </td>
+              
                 <td className="p-4">
                   <span className="bg-red-100 text-red-500 px-3 py-1 rounded-full text-sm">
                     {item.status}
                   </span>
                 </td>
 
-                <td className="p-4">{item.createdAt}</td>
+                <td className="p-4 text-green-600 font-semibold">
+                  {item.closedBy}
+                </td>
 
                 <td className="p-4">
                   <button
@@ -84,4 +86,4 @@ function UnauthorizedVehicle6() {
   );
 }
 
-export default UnauthorizedVehicle6;
+export default AlertTablePage;
