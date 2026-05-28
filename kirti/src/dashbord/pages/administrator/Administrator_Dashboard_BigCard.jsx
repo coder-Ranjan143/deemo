@@ -1,6 +1,7 @@
 function Administrator_Dashboard_BigCard({
     title,
     percentage,
+    lineColor = "#4ade80",
 }) {
     return (
         <div
@@ -8,42 +9,125 @@ function Administrator_Dashboard_BigCard({
                 rounded-2xl
                 border
                 border-gray-200
-                bg-white
-                p-5
+                bg-white/90
+                p-4
                 shadow-sm
-                transition-all
-                duration-300
-                hover:shadow-md
-                min-h-[240px]
+                min-h-[210px]
             "
         >
 
             {/* Title */}
-            <h2 className="text-sm font-bold uppercase tracking-wide text-gray-500">
+            <h2
+                className="
+                    text-[12px]
+                    font-bold
+                    uppercase
+                    tracking-wide
+                    text-gray-600
+                "
+            >
                 {title}
             </h2>
 
             {/* Percentage */}
-            <h1 className="mt-3 text-3xl font-bold text-gray-700">
+            <h1
+                className="
+                    mt-2
+                    text-[18px]
+                    font-bold
+                    text-gray-700
+                "
+            >
                 {percentage}
             </h1>
 
-            {/* Fake Graph */}
-            <div className="mt-10 flex h-[120px] items-end justify-between gap-2">
+            {/* Graph Box */}
+            <div
+                className="
+                    mt-4
+                    rounded-xl
+                    border
+                    border-gray-200
+                    bg-[#fafafa]
+                    p-3
+                "
+            >
 
-                <div className="w-full rounded-t bg-gray-300 h-[35%]"></div>
+                <div className="relative h-[95px] w-full">
 
-                <div className="w-full rounded-t bg-gray-300 h-[45%]"></div>
+                    {/* SVG GRAPH */}
+                    <svg
+                        viewBox="0 0 300 80"
+                        className="h-full w-full"
+                        preserveAspectRatio="none"
+                    >
 
-                <div className="w-full rounded-t bg-gray-300 h-[60%]"></div>
+                        {/* Graph Line */}
+                        <polyline
+                            fill="none"
+                            stroke={lineColor}
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            points="
+                                10,50
+                                50,50
+                                90,35
+                                130,36
+                                170,34
+                                210,32
+                                250,30
+                                290,26
+                            "
+                        />
 
-                <div className="w-full rounded-t bg-gray-300 h-[55%]"></div>
+                    </svg>
 
-                <div className="w-full rounded-t bg-gray-300 h-[70%]"></div>
+                    {/* Percentage Labels */}
+                    <div
+                        className="
+                            absolute
+                            bottom-3
+                            flex
+                            w-full
+                            justify-between
+                            px-1
+                            text-[9px]
+                            text-gray-500
+                        "
+                    >
+                        <span>21.08%</span>
+                        <span>21%</span>
+                        <span>22.25%</span>
+                        <span>22.14%</span>
+                        <span>22.31%</span>
+                        <span>22.37%</span>
+                        <span>22.69%</span>
+                    </div>
 
-                <div className="w-full rounded-t bg-gray-300 h-[80%]"></div>
+                    {/* Days */}
+                    <div
+                        className="
+                            absolute
+                            bottom-0
+                            flex
+                            w-full
+                            justify-between
+                            px-1
+                            text-[9px]
+                            text-gray-400
+                        "
+                    >
+                        <span>S</span>
+                        <span>M</span>
+                        <span>T</span>
+                        <span>W</span>
+                        <span>T</span>
+                        <span>F</span>
+                        <span>S</span>
+                    </div>
 
-                <div className="w-full rounded-t bg-gray-300 h-[90%]"></div>
+                </div>
 
             </div>
 

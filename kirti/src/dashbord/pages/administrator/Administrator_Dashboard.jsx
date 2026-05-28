@@ -4,13 +4,13 @@ import Administrator_Navbar from "./admin_dash_navbar/Administrator_Navbar";
 
 function Administrator_Dashboard() {
     return (
-        <div className="min-h-screen bg-gray-100 p-3 sm:p-4 md:p-5">
+        <div className="min-h-screen overflow-x-hidden bg-[#eef2f7] p-3">
 
             {/* Navbar */}
             <Administrator_Navbar />
 
             {/* Small Cards */}
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
 
                 <Administrator_Dashboard_SmallCard
                     title="TOTAL CAMERA"
@@ -35,11 +35,10 @@ function Administrator_Dashboard() {
                     subtitle="Critical camera currently down"
                     value="118"
                 />
-
             </div>
 
             {/* Second Row */}
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
 
                 <Administrator_Dashboard_SmallCard
                     title="DOWN TIME SUMMARY"
@@ -64,11 +63,10 @@ function Administrator_Dashboard() {
                     subtitle="Average Bottling Hours"
                     value="0m"
                 />
-
             </div>
 
             {/* Big Cards */}
-            <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div className="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-3">
 
                 <Administrator_Dashboard_BigCard
                     title="ACTIVE CAMERAS UPTIME"
@@ -84,7 +82,6 @@ function Administrator_Dashboard() {
                     title="DOWN CAMERAS (OF TOTAL)"
                     percentage="77.31%"
                 />
-
             </div>
 
         </div>
