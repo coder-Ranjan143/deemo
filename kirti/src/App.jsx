@@ -39,6 +39,15 @@ import PendingAlertTablePage from "./Alert_Escalation_Mngt/Pending_Alert/pages/P
 import CallDetails from "./Call Center/Total Calls/pages/CallDetails.jsx";
 import Call_center_Main from "./Call Center/Total Calls/pages/Call_center_Main.jsx";
 import CallCenterPage from "./Call Center/Total Calls/pages/CallCenterPage.jsx";
+import ResolveCallCenterPage from "./Call Center/Resolved/pages/ResolveCallCenterPage.jsx";
+import ResolveCallDetails from "./Call Center/Resolved/pages/ResolveCallDetails.jsx";
+import ResolveCall_center_Main from "./Call Center/Resolved/pages/ResolveCall_center_Main.jsx";
+import PendingCallCenterPage from "./Call Center/Pending/pages/PendingCallCenterPage.jsx";
+import PendingCallDetails from "./Call Center/Pending/pages/PendingCallDetails.jsx";
+import PendingCall_center_Main from "./Call Center/Pending/pages/PendingCall_center_Main.jsx";
+import AvgCallCenterPage from "./Call Center/Avg_Handle_Time/pages/AvgCallCenterPage.jsx";
+import AvgCallDetails from "./Call Center/Avg_Handle_Time/pages/AvgCallDetails.jsx";
+import AvgCall_center_Main from "./Call Center/Avg_Handle_Time/pages/AvgCall_center_Main.jsx";
 
 
 function App() {
@@ -237,9 +246,9 @@ function App() {
         />
       </Routes> */}
 
-{/* Pending Alert */}
+{/* Caller List */}
 
-      <CallCenterPage/>
+      {/* <CallCenterPage/>
       <Routes>
         <Route
           path="/"
@@ -249,8 +258,50 @@ function App() {
           path="/details/:id"
           element={<CallDetails />}
         />
-      </Routes>
+      </Routes> */}
 
+
+{/* Resolve Call list */}
+
+      {/* <ResolveCallCenterPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<ResolveCall_center_Main />}
+        />
+        <Route
+          path="/details/:id"
+          element={<ResolveCallDetails />}
+        />
+      </Routes> */}
+
+{/* pending Call list */}
+
+      {/* <PendingCallCenterPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<PendingCall_center_Main />}
+        />
+        <Route
+          path="/details/:id"
+          element={<PendingCallDetails />}
+        />
+      </Routes> */}
+
+{/* Avg Call list */}
+
+      <AvgCallCenterPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<AvgCall_center_Main />}
+        />
+        <Route
+          path="/details/:id"
+          element={<AvgCallDetails />}
+        />
+      </Routes>
       
     </BrowserRouter>
     
