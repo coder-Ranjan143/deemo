@@ -1,7 +1,9 @@
+import Master from "./Master Dashboard/Master";
+
 function App() {
   return (
     <div>
-      <h1>Hello React Kirti</h1>
+      <Master/>
     </div>
   );
 }
