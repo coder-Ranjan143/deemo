@@ -14,7 +14,7 @@ function HeaderTop({ showFilter, setShowFilter }) {
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-      <h1 className="text-2xl font-bold text-[#4b5aa7]">
+      <h1 className="text-2xl font-bold text-blue-700">
         Unauthorized Vehicle exit
       </h1>
 

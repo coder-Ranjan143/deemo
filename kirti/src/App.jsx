@@ -49,8 +49,12 @@ import AvgCallCenterPage from "./Call Center/Avg_Handle_Time/pages/AvgCallCenter
 import AvgCallDetails from "./Call Center/Avg_Handle_Time/pages/AvgCallDetails.jsx";
 import AvgCall_center_Main from "./Call Center/Avg_Handle_Time/pages/AvgCall_center_Main.jsx";
 import RecentCallLog from "./Call Center/Recent Call Logs/pages/RecentCallLog.jsx";
-
-
+import VehicleCaptureDetails from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCaptureDetails.jsx";
+import VehicleCaptureMain from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCaptureMain.jsx";
+import VehicleCapturePage from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCapturePage.jsx";
+import VehicleEntryDetails from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryDetails.jsx";
+import VehicleEntryMain from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryMain.jsx";
+import VehicleEntryPage from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryPage.jsx";
 
 
 function App() {
@@ -306,7 +310,39 @@ function App() {
         />
       </Routes> */}
 
-      <RecentCallLog/>
+{/* Resolve Alert */}
+
+      {/* <RecentCallLog/> */}
+
+
+{/* Vehicle Cature(ANPR) Alert */}
+
+      {/* <VehicleCapturePage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleCaptureMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleCaptureDetails />}
+        />
+      </Routes> */}
+
+
+{/* Vehicle Cature(ANPR) Alert */}
+
+      <VehicleEntryPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleEntryMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleEntryDetails />}
+        />
+      </Routes>
       
     </BrowserRouter>
     
