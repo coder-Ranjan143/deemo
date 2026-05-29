@@ -36,6 +36,10 @@ import ResolveAlertTablePage from "./Alert_Escalation_Mngt/Resolved/pages/Resolv
 import PendingAlertDetails from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertDetails.jsx";
 import PendingAlertHeader from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertHeader.jsx";
 import PendingAlertTablePage from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertTablePage.jsx";
+import CallDetails from "./Call Center/Total Calls/pages/CallDetails.jsx";
+import Call_center_Main from "./Call Center/Total Calls/pages/Call_center_Main.jsx";
+import CallCenterPage from "./Call Center/Total Calls/pages/CallCenterPage.jsx";
+
 
 function App() {
   return (
@@ -219,9 +223,9 @@ function App() {
         />
       </Routes> */}
 
-      {/* Pending Alert */}
+{/* Pending Alert */}
 
-      <PendingAlertHeader/>
+      {/* <PendingAlertHeader/>
       <Routes>
         <Route
           path="/"
@@ -230,6 +234,20 @@ function App() {
         <Route
           path="/details/:id"
           element={<PendingAlertDetails />}
+        />
+      </Routes> */}
+
+{/* Pending Alert */}
+
+      <CallCenterPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<Call_center_Main />}
+        />
+        <Route
+          path="/details/:id"
+          element={<CallDetails />}
         />
       </Routes>
 
