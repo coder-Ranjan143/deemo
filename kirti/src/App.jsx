@@ -48,6 +48,9 @@ import PendingCall_center_Main from "./Call Center/Pending/pages/PendingCall_cen
 import AvgCallCenterPage from "./Call Center/Avg_Handle_Time/pages/AvgCallCenterPage.jsx";
 import AvgCallDetails from "./Call Center/Avg_Handle_Time/pages/AvgCallDetails.jsx";
 import AvgCall_center_Main from "./Call Center/Avg_Handle_Time/pages/AvgCall_center_Main.jsx";
+import RecentCallLog from "./Call Center/Recent Call Logs/pages/RecentCallLog.jsx";
+
+
 
 
 function App() {
@@ -291,7 +294,7 @@ function App() {
 
 {/* Avg Call list */}
 
-      <AvgCallCenterPage/>
+      {/* <AvgCallCenterPage/>
       <Routes>
         <Route
           path="/"
@@ -301,7 +304,9 @@ function App() {
           path="/details/:id"
           element={<AvgCallDetails />}
         />
-      </Routes>
+      </Routes> */}
+
+      <RecentCallLog/>
       
     </BrowserRouter>
     
