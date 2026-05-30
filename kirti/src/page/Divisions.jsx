@@ -1,5 +1,5 @@
-import AddDivisionCard from "../components/AddDivisionCard";
-import DivisionCard from "../components/DivisionCard";
+import AddDivisionCard from "../Master/Master Dashboard/allDivisions/AddDivisionCard";
+import DivisionCard from "../Master/Master Dashboard/allDivisions/DivisionCard";
 
 import { divisions } from "../data/divisionsData";
 

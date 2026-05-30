@@ -1,10 +1,11 @@
-import Master from "./Master Dashboard/Master";
+import Master from "./Master/Master Dashboard/Master";
 import Divisions from "./page/Divisions";
+
 function App() {
   return (
     <div>
       {/* <Master/> */}
-      <Divisions/>
+      <Divisions />
     </div>
   );
 }
