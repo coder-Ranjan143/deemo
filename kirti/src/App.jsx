@@ -1,7 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Non_permitted from "./Pages3/Non_permitted.jsx";
-import VehicleDetails from "./Pages3/VehicleDetails.jsx";
 import UnauthorizedVehiclePage from "./filt_export/pages/UnauthorizedVehiclePage.jsx";
 import UnauthorizedVehicle from "./filt_export/pages/UnauthorizedVehicle.jsx";
 import UnauthorizedVehicle5 from "./Card5/pages/UnauthorizedVehicle5.jsx";
@@ -74,6 +72,18 @@ import VehicleTPPassPage from "./Manufacturing/In_Transit/Plant_Summery/TP_PassG
 import VehicleTPPassMain from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassMain.jsx";
 import VehicleTPPassDetails from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassDetails.jsx";
 import Vehicle_In_Transit from "./Manufacturing/In_Transit/Vehicle_In_Transit/pages/Vehicle_In_Transit.jsx";
+import VehicleTPPassVTSDetails from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSDetails.jsx";
+import VehicleTPPassVTSMain from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSMain.jsx";
+import VehicleTPPassVTSPage from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSPage.jsx";
+import VehicleCloseTPPassDetails from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassDetails.jsx";
+import VehicleCloseTPPassMain from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassMain.jsx";
+import VehicleCloseTPPassPage from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassPage.jsx";
+import VehicleExpireTPPassMain from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpireTPPassMain.jsx";
+import VehicleExpireTPPassPage from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpireTPPassPage.jsx";
+import VehicleExpire_StillTPPassDetails from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpire_StillTPPassDetails.jsx";
+import VehicleTotalTPPassDetails from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassDetails.jsx";
+import VehicleTotalTPPassMain from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassMain.jsx";
+import VehicleTotalTPPassPage from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassPage.jsx";
 
 function App() {
   return (
@@ -449,7 +459,63 @@ function App() {
 
 {/* TP Pass Generated */}
 
-        <Vehicle_In_Transit/>
+        {/* <Vehicle_In_Transit/> */}
+
+{/* Active TP Pass */}   
+
+        {/* <VehicleTPPassVTSPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleTPPassVTSMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleTPPassVTSDetails />}
+        />
+      </Routes> */}
+
+{/* Closed TP Pass */}   
+
+        {/* <VehicleCloseTPPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleCloseTPPassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleCloseTPPassDetails />}
+        />
+      </Routes>       */}
+
+{/* Expire & Still TP Pass */}   
+
+      {/* <VehicleExpireTPPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleExpireTPPassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleExpire_StillTPPassDetails />}
+        />
+      </Routes>   */}
+
+      {/* Expire & Still TP Pass */}   
+
+        <VehicleTotalTPPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleTotalTPPassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleTotalTPPassDetails />}
+        />
+      </Routes>  
 
     </BrowserRouter>
    
