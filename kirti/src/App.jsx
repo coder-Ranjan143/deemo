@@ -64,6 +64,16 @@ import VehicleExitWithVTPPPage from "./Manufacturing/In Premises/Exit with Valid
 import VehicleExitWithoutPassDetails from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassDetails.jsx";
 import VehicleExitWithoutPassPMain from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassMain.jsx";
 import VehicleExitWithoutPassPage from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassPage.jsx";
+import VehicleRunningWithPassDetails from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassDetails.jsx";
+import VehicleRunnigWithPassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassPage.jsx";
+import VehicleRunningWithPassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassMain.jsx";
+import VehicleRunnigExpirePassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassPage.jsx";
+import VehicleRunningExpirePassDetails from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpireTPPassDetails.jsx";
+import VehicleRunningExpirePassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassMain.jsx";
+import VehicleTPPassPage from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassPage.jsx";
+import VehicleTPPassMain from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassMain.jsx";
+import VehicleTPPassDetails from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassDetails.jsx";
+import Vehicle_In_Transit from "./Manufacturing/In_Transit/Vehicle_In_Transit/pages/Vehicle_In_Transit.jsx";
 
 function App() {
   return (
@@ -381,9 +391,9 @@ function App() {
       </Routes> */}
 
 
-      {/* Vehicle Exit Without Valid TP pass */}
+{/* Vehicle Exit Without Valid TP pass */}
 
-      <VehicleExitWithoutPassPage/>
+      {/* <VehicleExitWithoutPassPage/>
       <Routes>
         <Route
           path="/"
@@ -393,8 +403,53 @@ function App() {
           path="/details/:id"
           element={<VehicleExitWithoutPassDetails />}
         />
-      </Routes>
+      </Routes> */}
 
+{/* Vehicle Exit Without Valid TP pass */}
+
+      {/* <VehicleRunnigWithPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleRunningWithPassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleRunningWithPassDetails />}
+        />
+      </Routes> */}
+
+{/* Vehicle Exit Without Valid TP pass */}
+
+      {/* <VehicleRunnigExpirePassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleRunningExpirePassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleRunningExpirePassDetails />}
+        />
+      </Routes> */}
+
+{/* TP Pass Generated */}
+
+      {/* <VehicleTPPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleTPPassMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleTPPassDetails />}
+        />
+      </Routes> */}
+
+{/* TP Pass Generated */}
+
+        <Vehicle_In_Transit/>
 
     </BrowserRouter>
    
