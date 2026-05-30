@@ -55,7 +55,15 @@ import VehicleCapturePage from "./Manufacturing/In Premises/Total Vahicle Captur
 import VehicleEntryDetails from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryDetails.jsx";
 import VehicleEntryMain from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryMain.jsx";
 import VehicleEntryPage from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryPage.jsx";
-
+import VehicleExitDetails from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitDetails.jsx";
+import VehicleExitMain from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitMain.jsx";
+import VehicleExitPage from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitPage.jsx";
+import VehicleExitWithVTPPDetails from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPDetails.jsx";
+import VehicleExitWithVTPPMain from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPMain.jsx";
+import VehicleExitWithVTPPPage from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPPage.jsx";
+import VehicleExitWithoutPassDetails from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassDetails.jsx";
+import VehicleExitWithoutPassPMain from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassMain.jsx";
+import VehicleExitWithoutPassPage from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassPage.jsx";
 
 function App() {
   return (
@@ -332,7 +340,7 @@ function App() {
 
 {/* Vehicle Cature(ANPR) Alert */}
 
-      <VehicleEntryPage/>
+      {/* <VehicleEntryPage/>
       <Routes>
         <Route
           path="/"
@@ -342,11 +350,53 @@ function App() {
           path="/details/:id"
           element={<VehicleEntryDetails />}
         />
-      </Routes>
+      </Routes> */}
       
+{/* Vehicle Exit */}
+
+      {/* <VehicleExitPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleExitMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleExitDetails />}
+        />
+      </Routes> */}
+
+{/* Vehicle Exit With Valid TP pass */}
+
+      {/* <VehicleExitWithVTPPPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleExitWithVTPPMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleExitWithVTPPDetails />}
+        />
+      </Routes> */}
+
+
+      {/* Vehicle Exit Without Valid TP pass */}
+
+      <VehicleExitWithoutPassPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleExitWithoutPassPMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleExitWithoutPassDetails />}
+        />
+      </Routes>
+
+
     </BrowserRouter>
-    
-   
    
 
   );
