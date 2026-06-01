@@ -84,6 +84,21 @@ import VehicleExpire_StillTPPassDetails from "./VTS/Tp_Pass_Summery/Expired_and_
 import VehicleTotalTPPassDetails from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassDetails.jsx";
 import VehicleTotalTPPassMain from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassMain.jsx";
 import VehicleTotalTPPassPage from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassPage.jsx";
+import VehicleDelayDetails from "./Operator/Vehicle_delayed/pages/VehicleDelayDetails.jsx";
+import VehicleDelayPage from "./Operator/Vehicle_delayed/pages/VehicleDelayPage.jsx";
+import VehicleDelayMain from "./Operator/Vehicle_delayed/pages/VehicleDelayMain.jsx";
+import VehicleUnreachedDetails from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedDetails.jsx";
+import VehicleUnreachedPage from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedPage.jsx";
+import VehicleUnreachedMain from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedMain.jsx";
+import VehicleRouteDeviationDetails from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationDetails.jsx";
+import VehicleRouteDeviationPage from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationPage.jsx";
+import VehicleRouteDeviationMain from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationMain.jsx";
+import VehiclePurposeDetails from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposeDetails.jsx";
+import VehiclePurposeMain from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposeMain.jsx";
+import VehiclePurposePage from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposePage.jsx";
+import VehicleNotFoundDetails from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundDetails.jsx";
+import VehicleNotFoundMain from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundMain.jsx";
+import VehicleNotFoundPage from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundPage.jsx";
 
 function App() {
   return (
@@ -503,9 +518,9 @@ function App() {
         />
       </Routes>   */}
 
-      {/* Expire & Still TP Pass */}   
+{/* Expire & Still TP Pass */}   
 
-        <VehicleTotalTPPassPage/>
+        {/* <VehicleTotalTPPassPage/>
       <Routes>
         <Route
           path="/"
@@ -515,7 +530,78 @@ function App() {
           path="/details/:id"
           element={<VehicleTotalTPPassDetails />}
         />
-      </Routes>  
+      </Routes>   */}
+
+
+{/* Vehicle Delayed */}   
+
+      {/* <VehicleDelayPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleDelayMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleDelayDetails />}
+        />
+      </Routes>   */}
+
+{/* Vehicle Unreached */}   
+
+      {/* <VehicleUnreachedPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleUnreachedMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleUnreachedDetails />}
+        />
+      </Routes>  */}
+
+{/* Vehicle Route Deviation */}   
+
+      {/* <VehicleRouteDeviationPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleRouteDeviationMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleRouteDeviationDetails />}
+        />
+      </Routes>  */}
+
+{/* Vehicle Purpose */}   
+
+      {/* <VehiclePurposePage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehiclePurposeMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehiclePurposeDetails />}
+        />
+      </Routes>  */}
+
+ {/* Vehicle Not Found In GPS */}   
+
+      <VehicleNotFoundPage/>
+      <Routes>
+        <Route
+          path="/"
+          element={<VehicleNotFoundMain />}
+        />
+        <Route
+          path="/details/:id"
+          element={<VehicleNotFoundDetails />}
+        />
+      </Routes>      
 
     </BrowserRouter>
    
