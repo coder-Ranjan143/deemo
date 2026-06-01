@@ -99,6 +99,12 @@ import VehiclePurposePage from "./Operator/Vehicle_Purpose_Miss_Match/pages/Vehi
 import VehicleNotFoundDetails from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundDetails.jsx";
 import VehicleNotFoundMain from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundMain.jsx";
 import VehicleNotFoundPage from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundPage.jsx";
+import TotalCamera from "./Administrator/Total_Camera/pages/TotalCamera.jsx";
+import TotalCameraDetails from "./Administrator/Total_Camera/pages/TotalCameraDetails.jsx";
+import TotalCamera_page from "./Administrator/Total_Camera/pages/TotalCamera_page.jsx";
+import DownTimeCamera from "./Administrator/Down_Time_Summery/pages/DownTimeCamera.jsx";
+import DownTimeCameraDetails from "./Administrator/Down_Time_Summery/pages/DownTimeCameraDetails.jsx";
+import DownTimeCamera_page from "./Administrator/Down_Time_Summery/pages/DownTimeCamera_page.jsx";
 
 function App() {
   return (
@@ -589,9 +595,9 @@ function App() {
         />
       </Routes>  */}
 
- {/* Vehicle Not Found In GPS */}   
+{/* Vehicle Not Found In GPS */}   
 
-      <VehicleNotFoundPage/>
+      {/* <VehicleNotFoundPage/>
       <Routes>
         <Route
           path="/"
@@ -600,6 +606,34 @@ function App() {
         <Route
           path="/details/:id"
           element={<VehicleNotFoundDetails />}
+        />
+      </Routes>       */}
+
+ {/* Total Cameras */}   
+
+      {/* <TotalCamera_page/>
+      <Routes>
+        <Route
+          path="/"
+          element={<TotalCamera />}
+        />
+        <Route
+          path="/details/:id"
+          element={<TotalCameraDetails />}
+        />
+      </Routes> */}
+
+ {/* Down Time Summary */}   
+
+      <DownTimeCamera_page/>
+      <Routes>
+        <Route
+          path="/"
+          element={<DownTimeCamera />}
+        />
+        <Route
+          path="/details/:id"
+          element={<DownTimeCameraDetails />}
         />
       </Routes>      
 
