@@ -6,6 +6,7 @@ import Excutive from "./dashbord/pages/Excutive";
 import Oprator from "./dashbord/pages/Operator";
 import Add_Roles_Button from "./dashbord/user_mngt_dashboard/roles/Add_Roles_Button";
 import Roles from "./dashbord/user_mngt_dashboard/roles/Roles";
+import Users from "./dashbord/user_mngt_dashboard/users/Users";
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       {/* <Admin_GIS_Bottling_Dashboard /> */}
       {/* <Admin_GIS_Spirit_Dashboard /> */}
       {/* <Roles /> */}
-      <Add_Roles_Button />
+      {/* <Add_Roles_Button /> */}
+      <Users />
     </div>
   );
 }
