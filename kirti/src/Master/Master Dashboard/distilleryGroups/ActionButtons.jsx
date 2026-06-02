@@ -1,6 +1,6 @@
 // src/Master/Master Dashboard/distilleryGroups/ActionButtons.jsx
 
-const ActionButtons = ({ item, onEdit, onView, onAssignGuard }) => {
+const ActionButtons = ({ item, onEdit, onView, onAssignGuard, onDelete }) => {
   return (
     <div className="flex flex-wrap gap-2">
       <button
@@ -31,6 +31,12 @@ const ActionButtons = ({ item, onEdit, onView, onAssignGuard }) => {
       </button>
 
       <button
+        onClick={() => {
+        //   if (!onDelete) return;
+        //   const ok = window.confirm(`Are you sure you want to delete "${item.groupName}"?`);
+        //   if (ok) 
+         onDelete(item);
+        }}
         className="px-3 py-1 text-sm rounded-md border border-red-500 text-red-500 hover:bg-red-50"
       >
         Delete

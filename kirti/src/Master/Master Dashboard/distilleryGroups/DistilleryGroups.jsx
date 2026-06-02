@@ -10,6 +10,7 @@ import { distilleryGroups } from "./distilleryGroupData";
 const DistilleryGroups = () => {
   const [activeGroup, setActiveGroup] = useState(null);
   const [actionMode, setActionMode] = useState(null); // "edit", "view", or "assign"
+  const [groups, setGroups] = useState(distilleryGroups);
 
   const handleEdit = (group) => {
     setActiveGroup(group);
@@ -24,6 +25,14 @@ const DistilleryGroups = () => {
   const handleAssignGuard = (group) => {
     setActiveGroup(group);
     setActionMode("assign");
+  };
+
+  const handleDelete = (group) => {
+    setGroups((prev) => prev.filter((g) => g.id !== group.id));
+    if (activeGroup && activeGroup.id === group.id) {
+      setActiveGroup(null);
+      setActionMode(null);
+    }
   };
 
   const handleClose = () => {
@@ -46,10 +55,11 @@ const DistilleryGroups = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <DistilleryGroupTable
-        data={distilleryGroups}
+        data={groups}
         onEdit={handleEdit}
         onView={handleView}
         onAssignGuard={handleAssignGuard}
+        onDelete={handleDelete}
       />
 
       {activeGroup && actionMode === "edit" && (

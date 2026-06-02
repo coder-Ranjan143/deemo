@@ -1,7 +1,7 @@
 // src/Master/Master Dashboard/distilleryGroups/DistilleryGroupTable.jsx
 import ActionButtons from "./ActionButtons";
 
-const DistilleryGroupTable = ({ data, onEdit, onView, onAssignGuard }) => {
+const DistilleryGroupTable = ({ data, onEdit, onView, onAssignGuard, onDelete }) => {
   return (
     <div className="bg-white rounded-xl border overflow-hidden">
       <div className="overflow-x-auto">
@@ -24,7 +24,13 @@ const DistilleryGroupTable = ({ data, onEdit, onView, onAssignGuard }) => {
                 <td className="px-4 py-4">{item.guardName}</td>
                 <td className="px-4 py-4">{item.operatorName}</td>
                 <td className="px-4 py-4">
-                  <ActionButtons item={item} onEdit={onEdit} onView={onView} onAssignGuard={onAssignGuard} />
+                  <ActionButtons
+                    item={item}
+                    onEdit={onEdit}
+                    onView={onView}
+                    onAssignGuard={onAssignGuard}
+                    onDelete={onDelete}
+                  />
                 </td>
               </tr>
             ))}
