@@ -105,6 +105,10 @@ import TotalCamera_page from "./Administrator/Total_Camera/pages/TotalCamera_pag
 import DownTimeCamera from "./Administrator/Down_Time_Summery/pages/DownTimeCamera.jsx";
 import DownTimeCameraDetails from "./Administrator/Down_Time_Summery/pages/DownTimeCameraDetails.jsx";
 import DownTimeCamera_page from "./Administrator/Down_Time_Summery/pages/DownTimeCamera_page.jsx";
+import VehicleCountMain from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountMain.jsx";
+import VehicleCountpage from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountpage.jsx";
+import ManufacturingUnitMain from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitMain.jsx";
+import ManufacturingUnitPage from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitPage.jsx";
 
 function App() {
   return (
@@ -625,7 +629,7 @@ function App() {
 
  {/* Down Time Summary */}   
 
-      <DownTimeCamera_page/>
+      {/* <DownTimeCamera_page/>
       <Routes>
         <Route
           path="/"
@@ -635,7 +639,16 @@ function App() {
           path="/details/:id"
           element={<DownTimeCameraDetails />}
         />
-      </Routes>      
+      </Routes>       */}
+
+ {/* Vehicle Count in Loading Area */}   
+        {/* <VehicleCountpage/>
+        <VehicleCountMain/> */}
+
+{/* Vehicle Count in Loading Area */}  
+
+      <ManufacturingUnitPage/>
+      <ManufacturingUnitMain/>
 
     </BrowserRouter>
    
