@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
+import VehiclePurposePage from "./VehiclePurposePage";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -11,6 +12,8 @@ function VehiclePurposeMain() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <VehiclePurposePage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -75,6 +78,7 @@ function VehiclePurposeMain() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

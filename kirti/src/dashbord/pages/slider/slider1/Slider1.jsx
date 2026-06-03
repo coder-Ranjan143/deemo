@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../../../../Components/Card";
 import AlertBox from "../../../../Components/AlertBox";
 import Slider1_Heading from "./Slider1_Heading";
@@ -11,6 +12,9 @@ import {
 } from "lucide-react";
 
 function Slider1() {
+
+    const navigate = useNavigate();
+
     return (
         <div className="h-screen overflow-hidden overflow-x-hidden bg-gray-100">
 
@@ -21,18 +25,28 @@ function Slider1() {
 
                 {/* LEFT SIDE CARDS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:h-[400px] auto-rows-fr items-stretch">
+                   {/* crd1 */}
+                    <div
+                        onClick={() => navigate("/unauthorized-vehicle")}
+                        className="cursor-pointer"
+                    >
+                        <Card
+                            icon={<ShieldAlert size={22} className="text-yellow-600" />}
+                            title="Unauthorized Vehicle Entry"
+                            value="641"
+                            bgColor="bg-white"
+                            titleColor="text-red-950"
+                            valueColor="text-red-800"
+                            iconBg="bg-blue-100"
+                            hoverEffect="from-red-100"
+                        />
+                    </div>
 
-                    <Card
-                        icon={<ShieldAlert size={22} className="text-yellow-600" />}
-                        title="Unauthorized Vehicle Entry"
-                        value="641"
-                        bgColor="bg-white"
-                        titleColor="text-red-950"
-                        valueColor="text-red-800"
-                        iconBg="bg-blue-100"
-                        hoverEffect="from-red-100"
-                    />
-
+  {/* card-2 /kirti*/}
+                    {/* <div
+                        onClick={() => navigate("/criticalCameraDown")}
+                        className="cursor-pointer"
+                    > */}
                     <Card
                         icon={<CameraOff size={22} className="text-blue-600" />}
                         title="Critical Camera Down"
@@ -43,7 +57,13 @@ function Slider1() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-blue-100"
                     />
+                    {/* </div> */}
 
+{/* card-3  */}
+                     <div
+                        onClick={() => navigate("/vehicaltrackedAtLodingZone")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Truck size={22} className="text-pink-600" />}
                         title="Vehicle tracked at Loading Zone"
@@ -54,7 +74,14 @@ function Slider1() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-pink-100"
                     />
+                    </div>
 
+ <div
+                        onClick={() => navigate("/nonePermited")}
+                        className="cursor-pointer"
+                    >
+
+                    
                     <Card
                         icon={<Ban size={22} className="text-green-600" />}
                         title="Non Permitted Hours"
@@ -66,6 +93,11 @@ function Slider1() {
                         hoverEffect="from-green-100"
                     />
 
+                    </div>
+ <div
+                        onClick={() => navigate("/unauthorizedExit")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Ban size={22} className="text-purple-600" />}
                         title="Unauthorized Vehicle Exit"
@@ -76,7 +108,13 @@ function Slider1() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-purple-100"
                     />
+</div>
 
+
+ <div
+                        onClick={() => navigate("/permit-validation")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<BadgeCheck size={22} className="text-red-500" />}
                         title="Permit Validation"
@@ -87,8 +125,11 @@ function Slider1() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
-
+</div>
                 </div>
+
+
+
 
                 {/* RIGHT SIDE ALERT BOX */}
                 <div className="flex lg:h-[400px]">

@@ -10,8 +10,12 @@ import Slider1 from "./slider/slider1/Slider1";
 import Slider2 from "./slider/slider2/Slider2";
 import Slider3 from "./slider/slider3/Slider3";
 import Slider4 from "./slider/slider4/Slider4";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Excutive = () => {
+     const navigate = useNavigate();
+    
+
     return (
 
         <div className="h-screen overflow-hidden bg-gray-100">
@@ -23,7 +27,8 @@ const Excutive = () => {
             <Navbar />
 
             {/* SLIDER AREA */}
-            <div className="pt-[140px] h-screen">
+            <div className="pt-[100px] h-screen"
+             >
 
                 <Swiper
                     direction="horizontal"

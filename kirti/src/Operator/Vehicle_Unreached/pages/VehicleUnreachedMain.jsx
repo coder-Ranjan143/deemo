@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
+import VehicleUnreachedPage from "./VehicleUnreachedPage";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -11,6 +12,8 @@ function VehicleUnreachedMain() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <VehicleUnreachedPage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -80,6 +83,7 @@ function VehicleUnreachedMain() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

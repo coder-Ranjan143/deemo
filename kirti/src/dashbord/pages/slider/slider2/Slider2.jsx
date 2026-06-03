@@ -9,8 +9,11 @@ import {
     Ticket,
     LocateOff,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 function Slider2() {
+    const navigate = useNavigate();
     return (
         <div className="h-screen overflow-hidden overflow-x-hidden bg-gray-100">
             {/* Heading */}
@@ -20,40 +23,58 @@ function Slider2() {
 
                 {/* LEFT SIDE CARDS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:h-[400px] auto-rows-fr items-stretch">
+                    <div
+                        onClick={() => navigate("/vehicle/delayed")}
+                        className="cursor-pointer"
+                    >
+                        <Card
+                            icon={<Clock3 size={22} className="text-yellow-600" />}
+                            title="Vehicle Delayed"
+                            value="641"
+                            bgColor="bg-white"
+                            titleColor="text-brown-950"
+                            valueColor="text-red-800"
+                            iconBg="bg-blue-100"
+                            hoverEffect="from-red-100"
+                        />
 
-                    <Card
-                        icon={<Clock3 size={22} className="text-yellow-600" />}
-                        title="Vehicle Delayed"
-                        value="641"
-                        bgColor="bg-white"
-                        titleColor="text-brown-950"
-                        valueColor="text-red-800"
-                        iconBg="bg-blue-100"
-                        hoverEffect="from-red-100"
-                    />
+                    </div>
 
-                    <Card
-                        icon={<Route size={22} className="text-blue-600" />}
-                        title="Route Deviation"
-                        value="109"
-                        bgColor="bg-white"
-                        titleColor="text-blue-900"
-                        valueColor="text-red-800"
-                        iconBg="bg-blue-100"
-                        hoverEffect="from-blue-100"
-                    />
+                    <div
+                        onClick={() => navigate("/vehicle/deviated")}
+                        className="cursor-pointer"
+                    >
+                        <Card
+                            icon={<Route size={22} className="text-blue-600" />}
+                            title="Route Deviation"
+                            value="109"
+                            bgColor="bg-white"
+                            titleColor="text-blue-900"
+                            valueColor="text-red-800"
+                            iconBg="bg-blue-100"
+                            hoverEffect="from-blue-100"
+                        />
 
-                    <Card
-                        icon={<MapPinOff size={22} className="text-pink-600" />}
-                        title="Vehicle Not Reached Destination"
+                    </div>
 
-                        value="0"
-                        bgColor="bg-white"
-                        titleColor="text-pink-950"
-                        valueColor="text-red-800"
-                        iconBg="bg-blue-100"
-                        hoverEffect="from-pink-100"
-                    />
+                    <div
+                        onClick={() => navigate("/vehicle/unreached")}
+                        className="cursor-pointer"
+                    >
+                        <Card
+                            icon={<MapPinOff size={22} className="text-pink-600" />}
+                            title="Vehicle Not Reached Destination"
+
+                            value="0"
+                            bgColor="bg-white"
+                            titleColor="text-pink-950"
+                            valueColor="text-red-800"
+                            iconBg="bg-blue-100"
+                            hoverEffect="from-pink-100"
+                        />
+                    </div>
+
+
 
                     <Card
                         icon={<Radar size={22} className="text-green-600" />}
@@ -66,16 +87,25 @@ function Slider2() {
                         hoverEffect="from-green-100"
                     />
 
-                    <Card
-                        icon={<Ticket size={22} className="text-purple-600" />}
-                        title="Live TP Pass Count"
-                        value="709"
-                        bgColor="bg-white"
-                        titleColor="text-blue-900"
-                        valueColor="text-red-800"
-                        iconBg="bg-blue-100"
-                        hoverEffect="from-purple-100"
-                    />
+
+                    <div
+                        onClick={() => navigate("/vehicle/total-pass")}
+                        className="cursor-pointer"
+                    >
+                        <Card
+                            icon={<Ticket size={22} className="text-purple-600" />}
+                            title="Live TP Pass Count"
+                            value="709"
+                            bgColor="bg-white"
+                            titleColor="text-blue-900"
+                            valueColor="text-red-800"
+                            iconBg="bg-blue-100"
+                            hoverEffect="from-purple-100"
+                        />
+
+                    </div>
+
+
 
                     <Card
                         icon={<LocateOff size={22} className="text-red-500" />}

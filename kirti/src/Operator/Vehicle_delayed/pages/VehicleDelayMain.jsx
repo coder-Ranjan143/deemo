@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
+import VehicleDelayPage from "./VehicleDelayPage";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -11,6 +12,9 @@ function VehicleDelayMain() {
   const navigate = useNavigate();
 
   return (
+
+    <>
+    <VehicleDelayPage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -80,6 +84,7 @@ function VehicleDelayMain() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

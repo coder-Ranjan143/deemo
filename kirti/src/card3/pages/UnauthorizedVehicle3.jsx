@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
+import UnauthorizedVehiclePage3 from "./UnauthorizedVehiclePage3";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -11,6 +12,8 @@ function UnauthorizedVehicle3() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <UnauthorizedVehiclePage3/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -81,6 +84,7 @@ function UnauthorizedVehicle3() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

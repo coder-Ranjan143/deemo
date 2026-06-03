@@ -1,6 +1,7 @@
 import Card from "../../../../Components/Card";
 import Slider4_Heading from "./Slider4_Heading";
 import Slider4_Map from "./Slider4_Map";
+import { useNavigate } from "react-router-dom";
 
 import {
     ShieldAlert,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 function Slider4() {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen overflow-x-hidden bg-gray-100">
 
@@ -38,6 +40,11 @@ function Slider4() {
                     items-stretch
                 ">
 
+
+                    <div
+                        onClick={() => navigate("/unauthorized-vehicle")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<ShieldAlert size={22} className="text-yellow-600" />}
                         title="Unauthorized Vehicle Entry"
@@ -48,7 +55,13 @@ function Slider4() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
+                    </div>
 
+
+                    <div
+                        onClick={() => navigate("/unauthorizedExit")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Ban size={22} className="text-purple-600" />}
                         title="Unauthorized Vehicle Exit"
@@ -59,6 +72,7 @@ function Slider4() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-blue-100"
                     />
+                    </div>
 
                     <Card
                         icon={<ShieldAlert size={22} className="text-pink-600" />}
@@ -71,6 +85,12 @@ function Slider4() {
                         hoverEffect="from-pink-100"
                     />
 
+
+
+                    <div
+                        onClick={() => navigate("/nonePermited")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<ClockAlert size={22} className="text-green-600" />}
                         title="Non-Permitted Hours Vehicle"
@@ -81,7 +101,13 @@ function Slider4() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-green-100"
                     />
+                    </div>
 
+
+                    <div
+                        onClick={() => navigate("/vehicle/delayed")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Clock3 size={22} className="text-purple-600" />}
                         title="Vehicle Delayed"
@@ -92,7 +118,13 @@ function Slider4() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-purple-100"
                     />
+                    </div>
 
+
+                    <div
+                        onClick={() => navigate("/vehicle/unreached")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<LocateOff size={22} className="text-purple-600" />}
                         title="Destination Unreached"
@@ -103,6 +135,7 @@ function Slider4() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
+                    </div>
 
                 </div>
 

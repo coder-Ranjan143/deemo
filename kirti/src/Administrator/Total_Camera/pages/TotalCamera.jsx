@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CameraData from "../data/CameraData";
 import ExportDropdown from "../component/ExportDropdown";
+import TotalCamera_page from "./TotalCamera_page";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,6 +13,8 @@ function Dis_Camera() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <TotalCamera_page/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -82,6 +85,7 @@ function Dis_Camera() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

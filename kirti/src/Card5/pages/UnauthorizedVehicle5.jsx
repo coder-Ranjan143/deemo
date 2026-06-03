@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
 import ExportDropdown from "../component/ExportDropdown";
+import UnauthorizedVehiclePage5 from "./UnauthorizedVehiclePage5";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,6 +13,8 @@ function UnauthorizedVehicle5() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <UnauthorizedVehiclePage5/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -82,6 +85,7 @@ function UnauthorizedVehicle5() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

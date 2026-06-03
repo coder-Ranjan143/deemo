@@ -10,8 +10,14 @@ import {
     FileWarning,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 function Slider3() {
+
+    const navigate = useNavigate();
+
     return (
+        
         <div className="min-h-screen overflow-x-hidden bg-gray-100">
 
             {/* Heading */}
@@ -37,6 +43,10 @@ function Slider3() {
                     auto-rows-fr
                     items-stretch
                 ">
+                    <div
+                        onClick={() => navigate("/vehicle/exitWithoutTpPass")}
+                        className="cursor-pointer"
+                    >
 
                     <Card
                         icon={<FileWarning size={22} className="text-yellow-600" />}
@@ -48,7 +58,13 @@ function Slider3() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
+                    </div>
 
+
+                    <div
+                        onClick={() => navigate("/vehicle/deviated")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Route size={22} className="text-blue-600" />}
                         title="Route Deviation"
@@ -59,6 +75,7 @@ function Slider3() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-blue-100"
                     />
+                    </div>
 
                     <Card
                         icon={<ShieldAlert size={22} className="text-pink-600" />}
@@ -83,6 +100,12 @@ function Slider3() {
                         hoverEffect="from-green-100"
                     />
 
+
+
+                    <div
+                        onClick={() => navigate("/vehicle/delayed")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<Clock3 size={22} className="text-purple-600" />}
                         title="Vehicle Delayed"
@@ -94,6 +117,13 @@ function Slider3() {
                         hoverEffect="from-purple-100"
                     />
 
+                    </div>
+
+
+                    <div
+                        onClick={() => navigate("/vehicle/unreached")}
+                        className="cursor-pointer"
+                    >
                     <Card
                         icon={<LocateOff size={22} className="text-red-500" />}
                         title="Destination Unreached"
@@ -104,6 +134,7 @@ function Slider3() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-red-100"
                     />
+                    </div>
 
                 </div>
 

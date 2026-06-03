@@ -1,17 +1,30 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Master from "./Master/Master Dashboard/Master.jsx";
+import Divisions from "./page/Divisions.jsx";
+import DistilleryListing from "./Master/Master Dashboard/allDistilleries/DistilleryListing.jsx";
+import AllWarehouses from "./Master/Master Dashboard/allWarehouses/AllWarehouses.jsx";
+import DistilleryGroups from "./Master/Master Dashboard/distilleryGroups/DistilleryGroups.jsx";
+import HopePoints from "./Master/Master Dashboard/hopePoints/HopePoints.jsx";
+import VendorsList from "./Master/Master Dashboard/allVendors/VendorsList.jsx";
 import UnauthorizedVehiclePage from "./filt_export/pages/UnauthorizedVehiclePage.jsx";
 import UnauthorizedVehicle from "./filt_export/pages/UnauthorizedVehicle.jsx";
+import FiltExportVehicleDetails from "./filt_export/pages/VehicleDetails.jsx";
 import UnauthorizedVehicle5 from "./Card5/pages/UnauthorizedVehicle5.jsx";
 import UnauthorizedVehiclePage5 from "./Card5/pages/UnauthorizedVehiclePage5.jsx";
+import Card5VehicleDetails from "./Card5/pages/VehicleDetails.jsx";
 import UnauthorizedVehicle1 from "./Card1/pages/UnauthorizedVehicle1.jsx";
 import UnauthorizedVehiclePage1 from "./Card1/pages/UnauthorizedVehiclePage1.jsx";
+import Card1VehicleDetails from "./Card1/pages/VehicleDetails.jsx";
 import UnauthorizedVehicle3 from "./card3/pages/UnauthorizedVehicle3.jsx";
 import UnauthorizedVehiclePage3 from "./card3/pages/UnauthorizedVehiclePage3.jsx";
+import Card3VehicleDetails from "./card3/pages/VehicleDetails.jsx";
 import UnauthorizedVehicle4 from "./Card4/pages/UnauthorizedVehicle4.jsx";
 import UnauthorizedVehiclePage4 from "./Card4/pages/UnauthorizedvehiclePage4.jsx";
+import Card4VehicleDetails from "./Card4/pages/VehicleDetails.jsx";
 import UnauthorizedVehicle6 from "./Card6/pages/UnauthorizedVehicle6.jsx";
 import UnauthorizedVehiclePage6 from "./Card6/pages/UnauthorizedvehiclePage6.jsx";
+import Card6VehicleDetails from "./Card6/pages/VehicleDetails.jsx";
 import Dis_Camera from "./Camera/pages/Dis_Camera.jsx";
 import Dis_Camera_page from "./Camera/pages/Dis_Camera_page.jsx";
 import { Camera } from "lucide-react";
@@ -106,15 +119,62 @@ import DownTimeCamera from "./Administrator/Down_Time_Summery/pages/DownTimeCame
 import DownTimeCameraDetails from "./Administrator/Down_Time_Summery/pages/DownTimeCameraDetails.jsx";
 import DownTimeCamera_page from "./Administrator/Down_Time_Summery/pages/DownTimeCamera_page.jsx";
 import VehicleCountMain from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountMain.jsx";
+import VehicleCountDetails from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountDetails.jsx";
 import VehicleCountpage from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountpage.jsx";
+import ManufacturingUnitDetails from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitDetails.jsx";
 import ManufacturingUnitMain from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitMain.jsx";
 import ManufacturingUnitPage from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitPage.jsx";
+import DashboardAdministrator from "./dashbord/pages/Administrator.jsx";
+import DashboardExcutive from "./dashbord/pages/Excutive.jsx";
+import DashboardOperator from "./dashbord/pages/Operator.jsx";
+import Administrator_Dashboard from "./dashbord/pages/administrator/Administrator_Dashboard.jsx";
+import Administrator_Dashboard_BigCard from "./dashbord/pages/administrator/Administrator_Dashboard_BigCard.jsx";
+import Administrator_Dashboard_SmallCard from "./dashbord/pages/administrator/Administrator_Dashboard_SmallCard.jsx";
+import Admin_GIS_Bottling_Dashboard from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_Dashboard.jsx";
+import Admin_GIS_Bottling_LeftBox from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_LeftBox.jsx";
+import Admin_GIS_Bottling_RightBox from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_RightBox.jsx";
+import Administrator_GIS_Bottling_Card from "./dashbord/pages/administrator/administrator_gis_bottling/Administrator_GIS_Bottling_Card.jsx";
+import Administrator_GIS_Bottling_Nav from "./dashbord/pages/administrator/administrator_gis_bottling/Administrator_GIS_Bottling_Nav.jsx";
+import Admin_GIS_Spirit_Dashboard from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_Dashboard.jsx";
+import Admin_GIS_Spirit_LeftBox from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_LeftBox.jsx";
+import Admin_GIS_Spirit_RightBox from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_RightBox.jsx";
+import Administrator_GIS_Spirit_Card from "./dashbord/pages/administrator/administrator_gis_spirit/Administrator_GIS_Spirit_Card.jsx";
+import Administrator_GIS_Spirit_Nav from "./dashbord/pages/administrator/administrator_gis_spirit/Administrator_GIS_Spirit_Nav.jsx";
+import Admin_Mfg_Unit from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit.jsx";
+import Admin_Mfg_Unit_Box1 from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Box1.jsx";
+import Admin_Mfg_Unit_Box2 from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Box2.jsx";
+import Admin_Mfg_Unit_Card from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Card.jsx";
+import Admin_Mfg_Unit_Nav from "./dashbord/pages/administrator/administrator_mfg_unit/admin_mfg_unit_navbar/Admin_Mfg_Unit_Nav.jsx";
+import Operator_Dashbord from "./dashbord/pages/operator_dashboard/Operator_Dashbord.jsx";
+import Operator_DashboardCard from "./dashbord/pages/operator_dashboard/Operator_DashboardCard.jsx";
+import Slider1 from "./dashbord/pages/slider/slider1/Slider1.jsx";
+import Slider1_AlertBox from "./dashbord/pages/slider/slider1/Slider1_AlertBox.jsx";
+import Slider1_Heading from "./dashbord/pages/slider/slider1/Slider1_Heading.jsx";
+import Slider2 from "./dashbord/pages/slider/slider2/Slider2.jsx";
+import Slider2_AlertBox from "./dashbord/pages/slider/slider2/Slider2_AlertBox.jsx";
+import Slider2_Heading from "./dashbord/pages/slider/slider2/Slider2_Heading.jsx";
+import Slider3 from "./dashbord/pages/slider/slider3/Slider3.jsx";
+import Slder3_AlertBox from "./dashbord/pages/slider/slider3/Slder3_AlertBox.jsx";
+import Slider3_Heading from "./dashbord/pages/slider/slider3/Slider3_Heading.jsx";
+import Slider3_Map from "./dashbord/pages/slider/slider3/Slider3_Map.jsx";
+import Slider4 from "./dashbord/pages/slider/slider4/Slider4.jsx";
+import Slider4_Heading from "./dashbord/pages/slider/slider4/Slider4_Heading.jsx";
+import Slider4_Map from "./dashbord/pages/slider/slider4/Slider4_Map.jsx";
+import Add_Roles_Button from "./dashbord/user_mngt_dashboard/roles/Add_Roles_Button.jsx";
+import Roles from "./dashbord/user_mngt_dashboard/roles/Roles.jsx";
+import Add_User from "./dashbord/user_mngt_dashboard/users/Add_Users.jsx";
+import Users from "./dashbord/user_mngt_dashboard/users/Users.jsx";
+import AdministratorNavbar from "./dashbord/pages/administrator/admin_dash_navbar/Administrator_Navbar.jsx";
+import Excutive from "./dashbord/pages/Excutive.jsx";
+import Operator from "./dashbord/pages/Operator.jsx";
+import Administrator from "./dashbord/pages/Administrator.jsx";
 
 function App() {
   return (
 
 
     <BrowserRouter>
+      {/* <AdministratorNavbar/> */}
       {/* <Routes>
         <Route path="/" element={<Non_permitted />} />
         <Route
@@ -139,7 +199,7 @@ function App() {
         />
       </Routes> */}
 
-      
+
       {/* Card3 */}
 
       {/* <UnauthorizedVehiclePage3/>
@@ -172,7 +232,7 @@ function App() {
 
 
       {/* Card5 */}
-    
+
       {/* <UnauthorizedVehiclePage5/>
       <Routes>
         <Route
@@ -202,7 +262,7 @@ function App() {
       </Routes> */}
 
 
-        {/* Camera */}
+      {/* Camera */}
 
       {/* <Dis_Camera_page/>
       <Routes>
@@ -217,7 +277,7 @@ function App() {
       </Routes> */}
 
 
-         {/* GPS */}
+      {/* GPS */}
 
       {/* <GpstrackPage/>
       <Routes>
@@ -232,7 +292,7 @@ function App() {
       </Routes> */}
 
 
-       {/* Vehicle Movement */}
+      {/* Vehicle Movement */}
 
       {/* <VehicleMovementPage/>
       <Routes>
@@ -263,7 +323,7 @@ function App() {
       </Routes> */}
 
 
-        {/* Escalated Alert */}
+      {/* Escalated Alert */}
 
       {/* <EscalateAlertHeader/>
       <Routes>
@@ -278,7 +338,7 @@ function App() {
       </Routes> */}
 
 
-        {/* Resolve Alert */}
+      {/* Resolve Alert */}
 
       {/* <ResolveAlertHeader/>
       <Routes>
@@ -292,7 +352,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Pending Alert */}
+      {/* Pending Alert */}
 
       {/* <PendingAlertHeader/>
       <Routes>
@@ -306,7 +366,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Caller List */}
+      {/* Caller List */}
 
       {/* <CallCenterPage/>
       <Routes>
@@ -321,7 +381,7 @@ function App() {
       </Routes> */}
 
 
-{/* Resolve Call list */}
+      {/* Resolve Call list */}
 
       {/* <ResolveCallCenterPage/>
       <Routes>
@@ -335,7 +395,7 @@ function App() {
         />
       </Routes> */}
 
-{/* pending Call list */}
+      {/* pending Call list */}
 
       {/* <PendingCallCenterPage/>
       <Routes>
@@ -349,7 +409,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Avg Call list */}
+      {/* Avg Call list */}
 
       {/* <AvgCallCenterPage/>
       <Routes>
@@ -363,12 +423,12 @@ function App() {
         />
       </Routes> */}
 
-{/* Resolve Alert */}
+      {/* Resolve Alert */}
 
       {/* <RecentCallLog/> */}
 
 
-{/* Vehicle Cature(ANPR) Alert */}
+      {/* Vehicle Cature(ANPR) Alert */}
 
       {/* <VehicleCapturePage/>
       <Routes>
@@ -383,7 +443,7 @@ function App() {
       </Routes> */}
 
 
-{/* Vehicle Cature(ANPR) Alert */}
+      {/* Vehicle Cature(ANPR) Alert */}
 
       {/* <VehicleEntryPage/>
       <Routes>
@@ -396,8 +456,8 @@ function App() {
           element={<VehicleEntryDetails />}
         />
       </Routes> */}
-      
-{/* Vehicle Exit */}
+
+      {/* Vehicle Exit */}
 
       {/* <VehicleExitPage/>
       <Routes>
@@ -411,7 +471,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Vehicle Exit With Valid TP pass */}
+      {/* Vehicle Exit With Valid TP pass */}
 
       {/* <VehicleExitWithVTPPPage/>
       <Routes>
@@ -426,7 +486,7 @@ function App() {
       </Routes> */}
 
 
-{/* Vehicle Exit Without Valid TP pass */}
+      {/* Vehicle Exit Without Valid TP pass */}
 
       {/* <VehicleExitWithoutPassPage/>
       <Routes>
@@ -440,7 +500,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Vehicle Exit Without Valid TP pass */}
+      {/* Vehicle Exit Without Valid TP pass */}
 
       {/* <VehicleRunnigWithPassPage/>
       <Routes>
@@ -454,7 +514,7 @@ function App() {
         />
       </Routes> */}
 
-{/* Vehicle Exit Without Valid TP pass */}
+      {/* Vehicle Exit Without Valid TP pass */}
 
       {/* <VehicleRunnigExpirePassPage/>
       <Routes>
@@ -468,7 +528,7 @@ function App() {
         />
       </Routes> */}
 
-{/* TP Pass Generated */}
+      {/* TP Pass Generated */}
 
       {/* <VehicleTPPassPage/>
       <Routes>
@@ -482,13 +542,13 @@ function App() {
         />
       </Routes> */}
 
-{/* TP Pass Generated */}
+      {/* TP Pass Generated */}
 
-        {/* <Vehicle_In_Transit/> */}
+      {/* <Vehicle_In_Transit/> */}
 
-{/* Active TP Pass */}   
+      {/* Active TP Pass */}
 
-        {/* <VehicleTPPassVTSPage/>
+      {/* <VehicleTPPassVTSPage/>
       <Routes>
         <Route
           path="/"
@@ -500,9 +560,9 @@ function App() {
         />
       </Routes> */}
 
-{/* Closed TP Pass */}   
+      {/* Closed TP Pass */}
 
-        {/* <VehicleCloseTPPassPage/>
+      {/* <VehicleCloseTPPassPage/>
       <Routes>
         <Route
           path="/"
@@ -514,7 +574,7 @@ function App() {
         />
       </Routes>       */}
 
-{/* Expire & Still TP Pass */}   
+      {/* Expire & Still TP Pass */}
 
       {/* <VehicleExpireTPPassPage/>
       <Routes>
@@ -528,9 +588,9 @@ function App() {
         />
       </Routes>   */}
 
-{/* Expire & Still TP Pass */}   
+      {/* Expire & Still TP Pass */}
 
-        {/* <VehicleTotalTPPassPage/>
+      {/* <VehicleTotalTPPassPage/>
       <Routes>
         <Route
           path="/"
@@ -543,7 +603,7 @@ function App() {
       </Routes>   */}
 
 
-{/* Vehicle Delayed */}   
+      {/* Vehicle Delayed */}
 
       {/* <VehicleDelayPage/>
       <Routes>
@@ -557,7 +617,7 @@ function App() {
         />
       </Routes>   */}
 
-{/* Vehicle Unreached */}   
+      {/* Vehicle Unreached */}
 
       {/* <VehicleUnreachedPage/>
       <Routes>
@@ -571,7 +631,7 @@ function App() {
         />
       </Routes>  */}
 
-{/* Vehicle Route Deviation */}   
+      {/* Vehicle Route Deviation */}
 
       {/* <VehicleRouteDeviationPage/>
       <Routes>
@@ -585,7 +645,7 @@ function App() {
         />
       </Routes>  */}
 
-{/* Vehicle Purpose */}   
+      {/* Vehicle Purpose */}
 
       {/* <VehiclePurposePage/>
       <Routes>
@@ -599,7 +659,7 @@ function App() {
         />
       </Routes>  */}
 
-{/* Vehicle Not Found In GPS */}   
+      {/* Vehicle Not Found In GPS */}
 
       {/* <VehicleNotFoundPage/>
       <Routes>
@@ -613,7 +673,7 @@ function App() {
         />
       </Routes>       */}
 
- {/* Total Cameras */}   
+      {/* Total Cameras */}
 
       {/* <TotalCamera_page/>
       <Routes>
@@ -627,7 +687,7 @@ function App() {
         />
       </Routes> */}
 
- {/* Down Time Summary */}   
+      {/* Down Time Summary */}
 
       {/* <DownTimeCamera_page/>
       <Routes>
@@ -641,17 +701,136 @@ function App() {
         />
       </Routes>       */}
 
- {/* Vehicle Count in Loading Area */}   
-        {/* <VehicleCountpage/>
+      {/* Vehicle Count in Loading Area */}
+      {/* <VehicleCountpage/>
         <VehicleCountMain/> */}
 
-{/* Vehicle Count in Loading Area */}  
+      {/* Vehicle Count in Loading Area */}
 
-      <ManufacturingUnitPage/>
-      <ManufacturingUnitMain/>
+      {/* <ManufacturingUnitPage/>
+      <ManufacturingUnitMain/> */}
+
+
+      {/* <Excutive/> */}
+
+      <Routes>
+
+        
+
+        <Route
+          path="/"
+          element={<Excutive />}
+        />
+
+        <Route
+          path="/unauthorized-vehicle"
+          element={<UnauthorizedVehicle1 />}
+        />
+
+        <Route
+          path="/vehicaltrackedAtLodingZone"
+          element={<UnauthorizedVehicle3 />}
+        />
+
+
+        <Route
+          path="/nonePermited"
+          element={<UnauthorizedVehicle4 />}
+        />
+
+        <Route
+          path="/unauthorizedExit"
+          element={<UnauthorizedVehicle5 />}
+        />
+
+
+        <Route
+          path="/permit-validation"
+          element={<UnauthorizedVehicle6 />}
+        />
+
+
+
+        <Route
+          path="/vehicle/delayed"
+          element={<VehicleDelayMain />}
+        />
+
+
+
+
+        <Route
+          path="/vehicle/deviated"
+          element={<VehicleRouteDeviationMain />}
+        />
+
+
+        <Route
+          path="/vehicle/unreached"
+          element={<VehicleUnreachedMain />}
+        />
+
+
+
+
+        <Route
+          path="/vehicle/total-pass"
+          element={<VehicleTotalTPPassMain />}
+        />
+
+
+
+        <Route
+          path="/vehicle/exitWithoutTpPass"
+          element={<VehicleExitWithoutPassPMain />}
+        />
+
+        <Route
+          path="/executive/dashboard"
+          element={<Excutive/>}
+        />
+
+        <Route
+          path="/operator/dashboard"
+          element={<Operator />}
+        />
+
+        <Route
+          path="/administrator/dashboard"
+          element={<Administrator_Dashboard />}
+        />
+
+        <Route
+          path="/operator/typePurposeMismatch"
+          element={<VehiclePurposeMain />}
+        />
+
+        <Route
+          path="/vts/gpsElockMissing"
+          element={<VehicleNotFoundMain />}
+        />
+
+        <Route
+          path="/administrator/totalCamera"
+          element={<TotalCamera />}
+        />
+
+        <Route
+          path="/administrator/DownTimeCamera"
+          element={<DownTimeCamera />}
+        />
+
+        <Route
+          path="/administrator/manufacturingUnit"
+          element={<ManufacturingUnitMain />}
+        />
+
+      </Routes>
+
+      
 
     </BrowserRouter>
-   
+
 
   );
 }

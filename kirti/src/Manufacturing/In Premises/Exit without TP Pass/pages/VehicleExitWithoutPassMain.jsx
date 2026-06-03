@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
 import ExportDropdown from "../component/ExportDropdown";
+import VehicleExitWithoutPassPage from "./VehicleExitWithoutPassPage";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,6 +13,8 @@ function VehicleExitWithoutPassPMain() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <VehicleExitWithoutPassPage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -104,6 +107,7 @@ function VehicleExitWithoutPassPMain() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 
