@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import {
     ChevronDown,
     LayoutDashboard,
@@ -11,11 +12,12 @@ import {
     Users,
     FileText,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const Navbar = () => {
     const navigate = useNavigate();
     const [openMenu, setOpenMenu] = useState(null);
+    const navbarRef = useRef(null);
 
     const menus = [
         {
@@ -69,8 +71,64 @@ const Navbar = () => {
         setOpenMenu(openMenu === index ? null : index);
     };
 
-    const handleItemClick = (item) => {
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+                setOpenMenu(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    const handleItemClick = (menuTitle, item) => {
         console.log("Clicked:", item);
+        setOpenMenu(null);
+
+        if (menuTitle === "Manufacturing") {
+            switch (item) {
+                case "In Premises":
+                    navigate("/manufacturing/in-premises");
+                    break;
+
+                case "In Transit":
+                    navigate("/manufacturing/in-transit");
+                    break;
+
+
+                case "Document Mngt":
+                    navigate("/Document-Mngt");
+                    break;
+
+
+                default:
+                    console.log("Clicked:", item);
+            }
+
+            return;
+        }
+
+        if (menuTitle === "Warehouse") {
+            switch (item) {
+                case "In Premise":
+                    navigate("/warehouse/in-premises");
+                    break;
+
+                case "In Transit":
+                    navigate("/warehouse/in-transit");
+                    break;
+
+                default:
+                    console.log("Clicked:", item);
+            }
+
+            return;
+        }
+
         switch (item) {
             case "Executive":
                 navigate("/executive/dashboard");
@@ -85,7 +143,7 @@ const Navbar = () => {
                 break;
 
             case "SOP Report":
-                navigate("/sop-report");
+                navigate("/sopreport");
                 break;
 
             case "Alert Escalation Mngt":
@@ -100,13 +158,50 @@ const Navbar = () => {
                 navigate("/analysis-summary");
                 break;
 
+            case "Vehicle Trip Elock":
+                navigate("/vts/elock-trip");
+                break;
+
+
+            case "Vehicle Trip-GPS":
+                navigate("/vts/trip-gps");
+                break;
+
+            case "Tp Pass Summary":
+                navigate("/vts/Tp-pass");
+                break;
+
+
+            case "Tp Pass Summary":
+                navigate("/vts/Tp-pass");
+                break;
+
+            case "Master Dashboard":
+                navigate("/manage");
+                break;
+
+            case "Document List":
+                navigate("/documents");
+                break;
+
+            case "Manufacturing Unit":
+                navigate("/mfgunit");
+                break;
+
+
+
             default:
+
+
                 console.log("Clicked:", item);
         }
     };
 
     return (
-        <nav className="fixed top-[78px] left-0 w-full z-40 bg-red-800 text-white px-4 py-2.5 sm:px-6">
+        <nav
+            ref={navbarRef}
+            className="fixed top-[78px] left-0 w-full z-40 bg-red-800 text-white px-4 py-2.5 sm:px-6"
+        >
             <div className="flex items-center gap-4 overflow-x-auto pb-1 text-sm font-medium whitespace-nowrap sm:gap-5 lg:justify-center lg:overflow-visible lg:pb-0">
                 {menus.map((menu, index) => (
                     <div key={index} className="relative">
@@ -119,9 +214,8 @@ const Navbar = () => {
 
                             <ChevronDown
                                 size={16}
-                                className={`transition-transform duration-300 ${
-                                    openMenu === index ? "rotate-180" : ""
-                                }`}
+                                className={`transition-transform duration-300 ${openMenu === index ? "rotate-180" : ""
+                                    }`}
                             />
                         </button>
 
@@ -130,7 +224,7 @@ const Navbar = () => {
                                 {menu.items.map((item, i) => (
                                     <button
                                         key={i}
-                                        onClick={() => handleItemClick(item)}
+                                        onClick={() => handleItemClick(menu.title, item)}
                                         className="block w-full text-left px-4 py-3 text-sm hover:bg-red-700 border-b border-red-800 last:border-b-0"
                                     >
                                         {item}

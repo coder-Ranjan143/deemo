@@ -1,835 +1,204 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Master from "./Master/Master Dashboard/Master.jsx";
-import Divisions from "./page/Divisions.jsx";
-import DistilleryListing from "./Master/Master Dashboard/allDistilleries/DistilleryListing.jsx";
-import AllWarehouses from "./Master/Master Dashboard/allWarehouses/AllWarehouses.jsx";
-import DistilleryGroups from "./Master/Master Dashboard/distilleryGroups/DistilleryGroups.jsx";
-import HopePoints from "./Master/Master Dashboard/hopePoints/HopePoints.jsx";
-import VendorsList from "./Master/Master Dashboard/allVendors/VendorsList.jsx";
-import UnauthorizedVehiclePage from "./filt_export/pages/UnauthorizedVehiclePage.jsx";
-import UnauthorizedVehicle from "./filt_export/pages/UnauthorizedVehicle.jsx";
-import FiltExportVehicleDetails from "./filt_export/pages/VehicleDetails.jsx";
-import UnauthorizedVehicle5 from "./Card5/pages/UnauthorizedVehicle5.jsx";
-import UnauthorizedVehiclePage5 from "./Card5/pages/UnauthorizedVehiclePage5.jsx";
-import Card5VehicleDetails from "./Card5/pages/VehicleDetails.jsx";
-import UnauthorizedVehicle1 from "./Card1/pages/UnauthorizedVehicle1.jsx";
-import UnauthorizedVehiclePage1 from "./Card1/pages/UnauthorizedVehiclePage1.jsx";
-import Card1VehicleDetails from "./Card1/pages/VehicleDetails.jsx";
-import UnauthorizedVehicle3 from "./card3/pages/UnauthorizedVehicle3.jsx";
-import UnauthorizedVehiclePage3 from "./card3/pages/UnauthorizedVehiclePage3.jsx";
-import Card3VehicleDetails from "./card3/pages/VehicleDetails.jsx";
-import UnauthorizedVehicle4 from "./Card4/pages/UnauthorizedVehicle4.jsx";
-import UnauthorizedVehiclePage4 from "./Card4/pages/UnauthorizedvehiclePage4.jsx";
-import Card4VehicleDetails from "./Card4/pages/VehicleDetails.jsx";
-import UnauthorizedVehicle6 from "./Card6/pages/UnauthorizedVehicle6.jsx";
-import UnauthorizedVehiclePage6 from "./Card6/pages/UnauthorizedvehiclePage6.jsx";
-import Card6VehicleDetails from "./Card6/pages/VehicleDetails.jsx";
-import Dis_Camera from "./Camera/pages/Dis_Camera.jsx";
-import Dis_Camera_page from "./Camera/pages/Dis_Camera_page.jsx";
-import { Camera } from "lucide-react";
-import CameraDetails from "./Camera/pages/CameraDetails.jsx";
-import Gpstrack from "./GPS/pages/gpstrack.jsx";
-import GpstrackPage from "./GPS/pages/GpstrackPage.jsx";
-import GpsDetails from "./GPS/pages/GpsDetails.jsx";
-import VehicleMovement from "./Vehicle_Movement/pages/VehicleMovement.jsx";
-import VehicleMovementPage from "./Vehicle_Movement/pages/VehicleMovementPage.jsx";
-import VehicleMovementDetails from "./Vehicle_Movement/pages/VehicleMovementDetails.jsx";
-import AlertTablePage from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertTablePage.jsx";
-import AlertHeader from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertHeader.jsx";
-import AlertDetails from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertDetails.jsx";
-import EscalateAlertDetails from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertDetails.jsx";
-import EscalateAlertHeader from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertHeader.jsx";
-import EscalateAlertTablePage from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertTablePage.jsx";
-import ResolveAlertDetails from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertDetails.jsx";
-import ResolveAlertHeader from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertHeader.jsx";
-import ResolveAlertTablePage from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertTablePage.jsx";
-import PendingAlertDetails from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertDetails.jsx";
-import PendingAlertHeader from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertHeader.jsx";
-import PendingAlertTablePage from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertTablePage.jsx";
-import CallDetails from "./Call Center/Total Calls/pages/CallDetails.jsx";
-import Call_center_Main from "./Call Center/Total Calls/pages/Call_center_Main.jsx";
-import CallCenterPage from "./Call Center/Total Calls/pages/CallCenterPage.jsx";
-import ResolveCallCenterPage from "./Call Center/Resolved/pages/ResolveCallCenterPage.jsx";
-import ResolveCallDetails from "./Call Center/Resolved/pages/ResolveCallDetails.jsx";
-import ResolveCall_center_Main from "./Call Center/Resolved/pages/ResolveCall_center_Main.jsx";
-import PendingCallCenterPage from "./Call Center/Pending/pages/PendingCallCenterPage.jsx";
-import PendingCallDetails from "./Call Center/Pending/pages/PendingCallDetails.jsx";
-import PendingCall_center_Main from "./Call Center/Pending/pages/PendingCall_center_Main.jsx";
-import AvgCallCenterPage from "./Call Center/Avg_Handle_Time/pages/AvgCallCenterPage.jsx";
-import AvgCallDetails from "./Call Center/Avg_Handle_Time/pages/AvgCallDetails.jsx";
-import AvgCall_center_Main from "./Call Center/Avg_Handle_Time/pages/AvgCall_center_Main.jsx";
-import RecentCallLog from "./Call Center/Recent Call Logs/pages/RecentCallLog.jsx";
-import VehicleCaptureDetails from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCaptureDetails.jsx";
-import VehicleCaptureMain from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCaptureMain.jsx";
-import VehicleCapturePage from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCapturePage.jsx";
-import VehicleEntryDetails from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryDetails.jsx";
-import VehicleEntryMain from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryMain.jsx";
-import VehicleEntryPage from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryPage.jsx";
-import VehicleExitDetails from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitDetails.jsx";
-import VehicleExitMain from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitMain.jsx";
-import VehicleExitPage from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitPage.jsx";
-import VehicleExitWithVTPPDetails from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPDetails.jsx";
-import VehicleExitWithVTPPMain from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPMain.jsx";
-import VehicleExitWithVTPPPage from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPPage.jsx";
-import VehicleExitWithoutPassDetails from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassDetails.jsx";
-import VehicleExitWithoutPassPMain from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassMain.jsx";
-import VehicleExitWithoutPassPage from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassPage.jsx";
-import VehicleRunningWithPassDetails from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassDetails.jsx";
-import VehicleRunnigWithPassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassPage.jsx";
-import VehicleRunningWithPassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassMain.jsx";
-import VehicleRunnigExpirePassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassPage.jsx";
-import VehicleRunningExpirePassDetails from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpireTPPassDetails.jsx";
-import VehicleRunningExpirePassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassMain.jsx";
-import VehicleTPPassPage from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassPage.jsx";
-import VehicleTPPassMain from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassMain.jsx";
-import VehicleTPPassDetails from "./Manufacturing/In_Transit/Plant_Summery/TP_PassGenerated/pages/VehicleTPPassDetails.jsx";
-import Vehicle_In_Transit from "./Manufacturing/In_Transit/Vehicle_In_Transit/pages/Vehicle_In_Transit.jsx";
-import VehicleTPPassVTSDetails from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSDetails.jsx";
-import VehicleTPPassVTSMain from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSMain.jsx";
-import VehicleTPPassVTSPage from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSPage.jsx";
-import VehicleCloseTPPassDetails from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassDetails.jsx";
-import VehicleCloseTPPassMain from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassMain.jsx";
-import VehicleCloseTPPassPage from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassPage.jsx";
-import VehicleExpireTPPassMain from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpireTPPassMain.jsx";
-import VehicleExpireTPPassPage from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpireTPPassPage.jsx";
-import VehicleExpire_StillTPPassDetails from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpire_StillTPPassDetails.jsx";
-import VehicleTotalTPPassDetails from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassDetails.jsx";
-import VehicleTotalTPPassMain from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassMain.jsx";
-import VehicleTotalTPPassPage from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassPage.jsx";
-import VehicleDelayDetails from "./Operator/Vehicle_delayed/pages/VehicleDelayDetails.jsx";
-import VehicleDelayPage from "./Operator/Vehicle_delayed/pages/VehicleDelayPage.jsx";
-import VehicleDelayMain from "./Operator/Vehicle_delayed/pages/VehicleDelayMain.jsx";
-import VehicleUnreachedDetails from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedDetails.jsx";
-import VehicleUnreachedPage from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedPage.jsx";
-import VehicleUnreachedMain from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedMain.jsx";
-import VehicleRouteDeviationDetails from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationDetails.jsx";
-import VehicleRouteDeviationPage from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationPage.jsx";
-import VehicleRouteDeviationMain from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationMain.jsx";
-import VehiclePurposeDetails from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposeDetails.jsx";
-import VehiclePurposeMain from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposeMain.jsx";
-import VehiclePurposePage from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposePage.jsx";
-import VehicleNotFoundDetails from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundDetails.jsx";
-import VehicleNotFoundMain from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundMain.jsx";
-import VehicleNotFoundPage from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundPage.jsx";
-import TotalCamera from "./Administrator/Total_Camera/pages/TotalCamera.jsx";
-import TotalCameraDetails from "./Administrator/Total_Camera/pages/TotalCameraDetails.jsx";
-import TotalCamera_page from "./Administrator/Total_Camera/pages/TotalCamera_page.jsx";
-import DownTimeCamera from "./Administrator/Down_Time_Summery/pages/DownTimeCamera.jsx";
-import DownTimeCameraDetails from "./Administrator/Down_Time_Summery/pages/DownTimeCameraDetails.jsx";
-import DownTimeCamera_page from "./Administrator/Down_Time_Summery/pages/DownTimeCamera_page.jsx";
-import VehicleCountMain from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountMain.jsx";
-import VehicleCountDetails from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountDetails.jsx";
-import VehicleCountpage from "./Administrator/VehicleCountIn_LoadingArea/pages/VehicleCountpage.jsx";
-import ManufacturingUnitDetails from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitDetails.jsx";
-import ManufacturingUnitMain from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitMain.jsx";
-import ManufacturingUnitPage from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitPage.jsx";
-import DashboardAdministrator from "./dashbord/pages/Administrator.jsx";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./Home.jsx";
+import Executive from "./dashbord/executive/Executive.jsx";
 import DashboardExcutive from "./dashbord/pages/Excutive.jsx";
 import DashboardOperator from "./dashbord/pages/Operator.jsx";
-import Administrator_Dashboard from "./dashbord/pages/administrator/Administrator_Dashboard.jsx";
-import Administrator_Dashboard_BigCard from "./dashbord/pages/administrator/Administrator_Dashboard_BigCard.jsx";
-import Administrator_Dashboard_SmallCard from "./dashbord/pages/administrator/Administrator_Dashboard_SmallCard.jsx";
-import Admin_GIS_Bottling_Dashboard from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_Dashboard.jsx";
-import Admin_GIS_Bottling_LeftBox from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_LeftBox.jsx";
-import Admin_GIS_Bottling_RightBox from "./dashbord/pages/administrator/administrator_gis_bottling/Admin_GIS_Bottling_RightBox.jsx";
-import Administrator_GIS_Bottling_Card from "./dashbord/pages/administrator/administrator_gis_bottling/Administrator_GIS_Bottling_Card.jsx";
-import Administrator_GIS_Bottling_Nav from "./dashbord/pages/administrator/administrator_gis_bottling/Administrator_GIS_Bottling_Nav.jsx";
-import Admin_GIS_Spirit_Dashboard from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_Dashboard.jsx";
-import Admin_GIS_Spirit_LeftBox from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_LeftBox.jsx";
-import Admin_GIS_Spirit_RightBox from "./dashbord/pages/administrator/administrator_gis_spirit/Admin_GIS_Spirit_RightBox.jsx";
-import Administrator_GIS_Spirit_Card from "./dashbord/pages/administrator/administrator_gis_spirit/Administrator_GIS_Spirit_Card.jsx";
-import Administrator_GIS_Spirit_Nav from "./dashbord/pages/administrator/administrator_gis_spirit/Administrator_GIS_Spirit_Nav.jsx";
-import Admin_Mfg_Unit from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit.jsx";
-import Admin_Mfg_Unit_Box1 from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Box1.jsx";
-import Admin_Mfg_Unit_Box2 from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Box2.jsx";
-import Admin_Mfg_Unit_Card from "./dashbord/pages/administrator/administrator_mfg_unit/Admin_Mfg_Unit_Card.jsx";
-import Admin_Mfg_Unit_Nav from "./dashbord/pages/administrator/administrator_mfg_unit/admin_mfg_unit_navbar/Admin_Mfg_Unit_Nav.jsx";
-import Operator_Dashbord from "./dashbord/pages/operator_dashboard/Operator_Dashbord.jsx";
-import Operator_DashboardCard from "./dashbord/pages/operator_dashboard/Operator_DashboardCard.jsx";
-import Slider1 from "./dashbord/pages/slider/slider1/Slider1.jsx";
-import Slider1_AlertBox from "./dashbord/pages/slider/slider1/Slider1_AlertBox.jsx";
-import Slider1_Heading from "./dashbord/pages/slider/slider1/Slider1_Heading.jsx";
-import Slider2 from "./dashbord/pages/slider/slider2/Slider2.jsx";
-import Slider2_AlertBox from "./dashbord/pages/slider/slider2/Slider2_AlertBox.jsx";
-import Slider2_Heading from "./dashbord/pages/slider/slider2/Slider2_Heading.jsx";
-import Slider3 from "./dashbord/pages/slider/slider3/Slider3.jsx";
-import Slder3_AlertBox from "./dashbord/pages/slider/slider3/Slder3_AlertBox.jsx";
-import Slider3_Heading from "./dashbord/pages/slider/slider3/Slider3_Heading.jsx";
-import Slider3_Map from "./dashbord/pages/slider/slider3/Slider3_Map.jsx";
-import Slider4 from "./dashbord/pages/slider/slider4/Slider4.jsx";
-import Slider4_Heading from "./dashbord/pages/slider/slider4/Slider4_Heading.jsx";
-import Slider4_Map from "./dashbord/pages/slider/slider4/Slider4_Map.jsx";
-import Add_Roles_Button from "./dashbord/user_mngt_dashboard/roles/Add_Roles_Button.jsx";
-import Roles from "./dashbord/user_mngt_dashboard/roles/Roles.jsx";
-import Add_User from "./dashbord/user_mngt_dashboard/users/Add_Users.jsx";
-import Users from "./dashbord/user_mngt_dashboard/users/Users.jsx";
-import AdministratorNavbar from "./dashbord/pages/administrator/admin_dash_navbar/Administrator_Navbar.jsx";
-import Excutive from "./dashbord/pages/Excutive.jsx";
-import Operator from "./dashbord/pages/Operator.jsx";
-import Administrator from "./dashbord/pages/Administrator.jsx";
+import Administrative from "./dashbord/administrator/Administrative.jsx";
+import AdministratorDashboard from "./dashbord/pages/administrator/Administrator_Dashboard.jsx";
+import MfgUnit from "./dashbord/executive/pages/MfgUnitComm.jsx";
+
+import AlertMngt from "./analaysis/pages/AlertMngt.jsx";
+import AnalysisSummary from "./analaysis/pages/AnalysisSummary.jsx";
+import CallCenter from "./analaysis/pages/CallCenter.jsx";
+import SopReport from "./analaysis/pages/SopReport.jsx";
+import Analysis2 from "./analaysis/pages/Analysis2.jsx";
+
+import TpPassSummary from "./VTS/TpPassSummary.jsx";
+import VtsElockId from "./VTS/VtsElockId.jsx";
+import VtsElockTrip from "./VTS/VtsElockTrip.jsx";
+import VtsgpsTrip from "./VTS/VtsgpsTrip.jsx";
+import DocumentMngt from "./documentMngt/DocumentMngt.jsx";
+
+import MfgDistilleries from "./Manufacturing/MfgDistilleries.jsx";
+import ManufacturingInPremises from "./Manufacturing/InPremises.jsx";
+import ManufacturingInTransit from "./Manufacturing/InTransit.jsx";
+import WInPremises from "./warehouse/WInPremises.jsx";
+import WarehouseInTransit from "./warehouse/InTransit.jsx";
+
+
+import ManageUser from "./manageUser/ManageUser.jsx";
+import Activity from "./manageUser/Activity.jsx";
+import Edit from "./manageUser/Edit.jsx";
+import AssignOperator from "./manageUser/AssignOperator.jsx";
+import AssignedGroup from "./manageUser/AssignedGroup.jsx";
+
+import UnauthorizedVehicle1 from "./Card1/pages/UnauthorizedVehicle1.jsx";
+import UnauthorizedVehicle3 from "./card3/pages/UnauthorizedVehicle3.jsx";
+import UnauthorizedVehicle4 from "./Card4/pages/UnauthorizedVehicle4.jsx";
+import UnauthorizedVehicle5 from "./Card5/pages/UnauthorizedVehicle5.jsx";
+import UnauthorizedVehicle6 from "./Card6/pages/UnauthorizedVehicle6.jsx";
+
+import VehicleDelayMain from "./Operator/Vehicle_delayed/pages/VehicleDelayMain.jsx";
+import VehicleRouteDeviationMain from "./Operator/Vehicle_Deviation/pages/VehicleRouteDeviationMain.jsx";
+import VehicleUnreachedMain from "./Operator/Vehicle_Unreached/pages/VehicleUnreachedMain.jsx";
+import VehiclePurposeMain from "./Operator/Vehicle_Purpose_Miss_Match/pages/VehiclePurposeMain.jsx";
+import VehicleNotFoundMain from "./Operator/GPS_Elock Missing/pages/VehicleNotFoundMain.jsx";
+import VehicleExitWithoutPassMain from "./Manufacturing/In Premises/Exit without TP Pass/pages/VehicleExitWithoutPassMain.jsx";
+import VehicleTotalTPPassMain from "./VTS/Tp_Pass_Summery/Total_Tp_Pass/pages/VehicleTotalTPPassMain.jsx";
+import VehicleExpireTPPassMain from "./VTS/Tp_Pass_Summery/Expired_and_Still_Open/pages/VehicleExpireTPPassMain.jsx";
+import VehicleTPPassVTSMain from "./VTS/Tp_Pass_Summery/Active_Tp_Pass/pages/VehicleTPPassVTSMain.jsx";
+import VehicleCloseTPPassMain from "./VTS/Tp_Pass_Summery/Closed_Tp_Pass/pages/VehicleCloseTPPassMain.jsx";
+
+import TotalCamera from "./Administrator/Total_Camera/pages/TotalCamera.jsx";
+import DownTimeCamera from "./Administrator/Down_Time_Summery/pages/DownTimeCamera.jsx";
+import ManufacturingUnitMain from "./Administrator/Manufacturing_Unit/pages/ManufacturingUnitMain.jsx";
+import MfgUnitComm from "./dashbord/executive/pages/MfgUnitComm.jsx";
+import DisCamera from "./Camera/pages/Dis_Camera.jsx";
+import Gpstrack from "./GPS/pages/Gpstrack.jsx";
+import VehicleMovement from "./Vehicle_Movement/pages/VehicleMovement.jsx";
+import Dis_Camera from "./Camera/pages/Dis_Camera.jsx";
+import AlertTablePage from "./Alert_Escalation_Mngt/Total_Alert/pages/AlertTablePage.jsx";
+import EscalateAlertTablePage from "./Alert_Escalation_Mngt/Escalted/pages/EscalateAlertTablePage.jsx";
+import ResolveAlertTablePage from "./Alert_Escalation_Mngt/Resolved/pages/ResolveAlertTablePage.jsx";
+import PendingAlertTablePage from "./Alert_Escalation_Mngt/Pending_Alert/pages/PendingAlertTablePage.jsx";
+import Call_center_Main from "./Call Center/Total Calls/pages/Call_center_Main.jsx";
+import ResolveCall_center_Main from "./Call Center/Resolved/pages/ResolveCall_center_Main.jsx";
+import PendingCall_center_Main from "./Call Center/Pending/pages/PendingCall_center_Main.jsx";
+import AvgCall_center_Main from "./Call Center/Avg_Handle_Time/pages/AvgCall_center_Main.jsx";
+import VehicleExitWithVTPPMain from "./Manufacturing/In Premises/Exit with Valid Tp Pass/pages/VehicleExitWithVTPPMain.jsx";
+import VehicleExitMain from "./Manufacturing/In Premises/Vehicle Exit/pages/VehicleExitMain.jsx";
+import VehicleEntryMain from "./Manufacturing/In Premises/Vehicle Enter/pages/VehicleEntryMain.jsx";
+import VehicleCaptureMain from "./Manufacturing/In Premises/Total Vahicle Capture(ANPR)/pages/VehicleCaptureMain.jsx";
+import VehicleRunningWithPassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassMain.jsx";
+import VehicleRunnigWithPassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassPage.jsx";
+import VehicleRunningExpirePassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassMain.jsx";
+
 
 function App() {
   return (
-
-
-    <BrowserRouter>
-      {/* <AdministratorNavbar/> */}
-      {/* <Routes>
-        <Route path="/" element={<Non_permitted />} />
-        <Route
-          path="/vehicle/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-
-      {/* Card1 */}
-
-      {/* <UnauthorizedVehiclePage1/>
-      <Routes>
-        <Route
-          path="/"
-          element={<UnauthorizedVehicle1 />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Card3 */}
-
-      {/* <UnauthorizedVehiclePage3/>
-      <Routes>
-        <Route
-          path="/"
-          element={<UnauthorizedVehicle3 />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Card4 */}
-
-      {/* <UnauthorizedVehiclePage4/>
-      <Routes>
-        <Route
-          path="/"
-          element={<UnauthorizedVehicle4 />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-
-      {/* Card5 */}
-
-      {/* <UnauthorizedVehiclePage5/>
-      <Routes>
-        <Route
-          path="/"
-          element={<UnauthorizedVehicle5 />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-
-      {/* Card6 */}
-
-      {/* <UnauthorizedVehiclePage6/>
-      <Routes>
-        <Route
-          path="/"
-          element={<UnauthorizedVehicle6 />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Camera */}
-
-      {/* <Dis_Camera_page/>
-      <Routes>
-        <Route
-          path="/"
-          element={<Dis_Camera />}
-        />
-        <Route
-          path="/details/:id"
-          element={<CameraDetails />}
-        />
-      </Routes> */}
-
-
-      {/* GPS */}
-
-      {/* <GpstrackPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<Gpstrack />}
-        />
-        <Route
-          path="/details/:id"
-          element={<GpsDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Vehicle Movement */}
-
-      {/* <VehicleMovementPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleMovement />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleMovementDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Total Alert */}
-
-
-      {/* <AlertHeader/>
-      <Routes>
-        <Route
-          path="/"
-          element={<AlertTablePage />}
-        />
-        <Route
-          path="/details/:id"
-          element={<AlertDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Escalated Alert */}
-
-      {/* <EscalateAlertHeader/>
-      <Routes>
-        <Route
-          path="/"
-          element={<EscalateAlertTablePage />}
-        />
-        <Route
-          path="/details/:id"
-          element={<EscalateAlertDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Resolve Alert */}
-
-      {/* <ResolveAlertHeader/>
-      <Routes>
-        <Route
-          path="/"
-          element={<ResolveAlertTablePage />}
-        />
-        <Route
-          path="/details/:id"
-          element={<ResolveAlertDetails />}
-        />
-      </Routes> */}
-
-      {/* Pending Alert */}
-
-      {/* <PendingAlertHeader/>
-      <Routes>
-        <Route
-          path="/"
-          element={<PendingAlertTablePage />}
-        />
-        <Route
-          path="/details/:id"
-          element={<PendingAlertDetails />}
-        />
-      </Routes> */}
-
-      {/* Caller List */}
-
-      {/* <CallCenterPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<Call_center_Main />}
-        />
-        <Route
-          path="/details/:id"
-          element={<CallDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Resolve Call list */}
-
-      {/* <ResolveCallCenterPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<ResolveCall_center_Main />}
-        />
-        <Route
-          path="/details/:id"
-          element={<ResolveCallDetails />}
-        />
-      </Routes> */}
-
-      {/* pending Call list */}
-
-      {/* <PendingCallCenterPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<PendingCall_center_Main />}
-        />
-        <Route
-          path="/details/:id"
-          element={<PendingCallDetails />}
-        />
-      </Routes> */}
-
-      {/* Avg Call list */}
-
-      {/* <AvgCallCenterPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<AvgCall_center_Main />}
-        />
-        <Route
-          path="/details/:id"
-          element={<AvgCallDetails />}
-        />
-      </Routes> */}
-
-      {/* Resolve Alert */}
-
-      {/* <RecentCallLog/> */}
-
-
-      {/* Vehicle Cature(ANPR) Alert */}
-
-      {/* <VehicleCapturePage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleCaptureMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleCaptureDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Vehicle Cature(ANPR) Alert */}
-
-      {/* <VehicleEntryPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleEntryMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleEntryDetails />}
-        />
-      </Routes> */}
-
-      {/* Vehicle Exit */}
-
-      {/* <VehicleExitPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleExitMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleExitDetails />}
-        />
-      </Routes> */}
-
-      {/* Vehicle Exit With Valid TP pass */}
-
-      {/* <VehicleExitWithVTPPPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleExitWithVTPPMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleExitWithVTPPDetails />}
-        />
-      </Routes> */}
-
-
-      {/* Vehicle Exit Without Valid TP pass */}
-
-      {/* <VehicleExitWithoutPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleExitWithoutPassPMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleExitWithoutPassDetails />}
-        />
-      </Routes> */}
-
-      {/* Vehicle Exit Without Valid TP pass */}
-
-      {/* <VehicleRunnigWithPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleRunningWithPassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleRunningWithPassDetails />}
-        />
-      </Routes> */}
-
-      {/* Vehicle Exit Without Valid TP pass */}
-
-      {/* <VehicleRunnigExpirePassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleRunningExpirePassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleRunningExpirePassDetails />}
-        />
-      </Routes> */}
-
-      {/* TP Pass Generated */}
-
-      {/* <VehicleTPPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleTPPassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleTPPassDetails />}
-        />
-      </Routes> */}
-
-      {/* TP Pass Generated */}
-
-      {/* <Vehicle_In_Transit/> */}
-
-      {/* Active TP Pass */}
-
-      {/* <VehicleTPPassVTSPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleTPPassVTSMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleTPPassVTSDetails />}
-        />
-      </Routes> */}
-
-      {/* Closed TP Pass */}
-
-      {/* <VehicleCloseTPPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleCloseTPPassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleCloseTPPassDetails />}
-        />
-      </Routes>       */}
-
-      {/* Expire & Still TP Pass */}
-
-      {/* <VehicleExpireTPPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleExpireTPPassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleExpire_StillTPPassDetails />}
-        />
-      </Routes>   */}
-
-      {/* Expire & Still TP Pass */}
-
-      {/* <VehicleTotalTPPassPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleTotalTPPassMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleTotalTPPassDetails />}
-        />
-      </Routes>   */}
-
-
-      {/* Vehicle Delayed */}
-
-      {/* <VehicleDelayPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleDelayMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleDelayDetails />}
-        />
-      </Routes>   */}
-
-      {/* Vehicle Unreached */}
-
-      {/* <VehicleUnreachedPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleUnreachedMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleUnreachedDetails />}
-        />
-      </Routes>  */}
-
-      {/* Vehicle Route Deviation */}
-
-      {/* <VehicleRouteDeviationPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleRouteDeviationMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleRouteDeviationDetails />}
-        />
-      </Routes>  */}
-
-      {/* Vehicle Purpose */}
-
-      {/* <VehiclePurposePage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehiclePurposeMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehiclePurposeDetails />}
-        />
-      </Routes>  */}
-
-      {/* Vehicle Not Found In GPS */}
-
-      {/* <VehicleNotFoundPage/>
-      <Routes>
-        <Route
-          path="/"
-          element={<VehicleNotFoundMain />}
-        />
-        <Route
-          path="/details/:id"
-          element={<VehicleNotFoundDetails />}
-        />
-      </Routes>       */}
-
-      {/* Total Cameras */}
-
-      {/* <TotalCamera_page/>
-      <Routes>
-        <Route
-          path="/"
-          element={<TotalCamera />}
-        />
-        <Route
-          path="/details/:id"
-          element={<TotalCameraDetails />}
-        />
-      </Routes> */}
-
-      {/* Down Time Summary */}
-
-      {/* <DownTimeCamera_page/>
-      <Routes>
-        <Route
-          path="/"
-          element={<DownTimeCamera />}
-        />
-        <Route
-          path="/details/:id"
-          element={<DownTimeCameraDetails />}
-        />
-      </Routes>       */}
-
-      {/* Vehicle Count in Loading Area */}
-      {/* <VehicleCountpage/>
-        <VehicleCountMain/> */}
-
-      {/* Vehicle Count in Loading Area */}
-
-      {/* <ManufacturingUnitPage/>
-      <ManufacturingUnitMain/> */}
-
-
-      {/* <Excutive/> */}
-
-      <Routes>
-
-        
-
-        <Route
-          path="/"
-          element={<Excutive />}
-        />
-
-        <Route
-          path="/unauthorized-vehicle"
-          element={<UnauthorizedVehicle1 />}
-        />
-
-        <Route
-          path="/vehicaltrackedAtLodingZone"
-          element={<UnauthorizedVehicle3 />}
-        />
-
-
-        <Route
-          path="/nonePermited"
-          element={<UnauthorizedVehicle4 />}
-        />
-
-        <Route
-          path="/unauthorizedExit"
-          element={<UnauthorizedVehicle5 />}
-        />
-
-
-        <Route
-          path="/permit-validation"
-          element={<UnauthorizedVehicle6 />}
-        />
-
-
-
-        <Route
-          path="/vehicle/delayed"
-          element={<VehicleDelayMain />}
-        />
-
-
-
-
-        <Route
-          path="/vehicle/deviated"
-          element={<VehicleRouteDeviationMain />}
-        />
-
-
-        <Route
-          path="/vehicle/unreached"
-          element={<VehicleUnreachedMain />}
-        />
-
-
-
-
-        <Route
-          path="/vehicle/total-pass"
-          element={<VehicleTotalTPPassMain />}
-        />
-
-
-
-        <Route
-          path="/vehicle/exitWithoutTpPass"
-          element={<VehicleExitWithoutPassPMain />}
-        />
-
-        <Route
-          path="/executive/dashboard"
-          element={<Excutive/>}
-        />
-
-        <Route
-          path="/operator/dashboard"
-          element={<Operator />}
-        />
-
-        <Route
-          path="/administrator/dashboard"
-          element={<Administrator_Dashboard />}
-        />
-
-        <Route
-          path="/operator/typePurposeMismatch"
-          element={<VehiclePurposeMain />}
-        />
-
-        <Route
-          path="/vts/gpsElockMissing"
-          element={<VehicleNotFoundMain />}
-        />
-
-        <Route
-          path="/administrator/totalCamera"
-          element={<TotalCamera />}
-        />
-
-        <Route
-          path="/administrator/DownTimeCamera"
-          element={<DownTimeCamera />}
-        />
-
-        <Route
-          path="/administrator/manufacturingUnit"
-          element={<ManufacturingUnitMain />}
-        />
-
-      </Routes>
-
+    <Routes>
+      {/* <Route path="/" element={<Home />} /> */}
+
+      <Route path="/executive" element={<Executive />} />
+      <Route path="/" element={<DashboardExcutive />} />
+      <Route path="/executive/dashboard" element={<DashboardExcutive />} />
+      <Route path="/operator" element={<DashboardOperator />} />
+      <Route path="/operator/dashboard" element={<DashboardOperator />} />
+      <Route path="/administrative" element={<Administrative />} />
+      <Route path="/administrator/dashboard" element={<AdministratorDashboard />} />
+      <Route path="/mfgunit" element={<MfgUnit />} />
+
+      <Route path="/alertmangt" element={<AlertMngt />} />
+      <Route path="/analysissummry" element={<AnalysisSummary />} />
+      <Route path="/callcenter" element={<CallCenter />} />
+      <Route path="/sopreport" element={<SopReport />} />
+      <Route path="/sopreport/camera" element={<DisCamera />} />
+      <Route path="/sopreport/gps" element={<Gpstrack />} />
+      <Route path="/sopreport/vehicle-movements" element={<VehicleMovement />} />
+      <Route path="/analysis2" element={<Analysis2 />} />
+
+    
+      <Route path="/mfg-distilleries" element={<MfgDistilleries />} />
+     
+
+      <Route path="/vts" element={<TpPassSummary />} />
+      <Route path="/vts/elock-trip" element={<VtsElockTrip />} />
+      <Route path="/vts/gps-trip" element={<VtsgpsTrip />} />
+      <Route path="/vts/gps/id" element={<VtsElockId />} />
+      <Route path="/vts/gpsElockMissing" element={<VehicleNotFoundMain />} />
+
+      <Route path="/documents" element={<DocumentMngt />} />
+      <Route path="/manage" element={<ManageUser />} />
+      <Route path="/activity" element={<Activity />} />
+      <Route path="/edit" element={<Edit />} />
+      <Route path="/assign-oprator" element={<AssignOperator />} />
+      <Route path="/assign-group" element={<AssignedGroup />} />
+
+      <Route path="/unauthorized-vehicle" element={<UnauthorizedVehicle1 />} />
+      <Route path="/vehicaltrackedAtLodingZone" element={<UnauthorizedVehicle3 />} />
+      <Route path="/nonePermited" element={<UnauthorizedVehicle4 />} />
+      <Route path="/unauthorizedExit" element={<UnauthorizedVehicle5 />} />
+      <Route path="/permit-validation" element={<UnauthorizedVehicle6 />} />
+
+      <Route path="/vehicle/delayed" element={<VehicleDelayMain />} />
+      <Route path="/vehicle/deviated" element={<VehicleRouteDeviationMain />} />
+      <Route path="/vehicle/unreached" element={<VehicleUnreachedMain />} />
+      <Route path="/vehicle/total-pass" element={<VehicleTotalTPPassMain />} />
+      <Route path="/vehicle/exitWithoutTpPass" element={<VehicleExitWithoutPassMain />} />
+      <Route path="/operator/typePurposeMismatch" element={<VehiclePurposeMain />} />
+
+      <Route path="/administrator/totalCamera" element={<TotalCamera />} />
+      <Route path="/administrator/DownTimeCamera" element={<DownTimeCamera />} />
+      <Route path="/administrator/manufacturingUnit" element={<ManufacturingUnitMain />} />
+
+      <Route path="/cameras/mfg-unit" element={<MfgUnitComm />} />
+      <Route path="/cameras/totalActiveCamera" element={<MfgDistilleries />} />
+      <Route path="/cameras/totalActiveCriticalCameras" element={<MfgDistilleries />} />
+      <Route path="/cameras/totalActiveNonCriticalCameras" element={<MfgDistilleries />} />
+      <Route path="/sopreport/camera" element={<Dis_Camera />} />
+      <Route path="/sopreport/gps" element={<Gpstrack />} />
+      <Route path="/sopreport/vehicle-movements" element={<VehicleMovement />} />
+      <Route path="/alert-escalation" element={<AlertMngt />} />
+
+
+      <Route path="/alerts/all" element={<AlertTablePage />} />
+
+      <Route path="/all/escalate" element={<EscalateAlertTablePage />} />
+      <Route path="/all/resolved" element={<ResolveAlertTablePage />} />
+      <Route path="/sopreport/pending-alerts" element={<PendingAlertTablePage />} />
+
+      <Route path="/call-center" element={<CallCenter />} />
+
+      <Route path="/callCenter/list-Resolved" element={<ResolveCall_center_Main />} />
+
+      <Route path="/callCenter/pending" element={<PendingCall_center_Main />} />
+
+      <Route path="/callCenter/statusList" element={<AvgCall_center_Main />} />
+
+      <Route path="/analysis-summary" element={<AnalysisSummary />} />
+
+      <Route path="/manufacturing/in-premises" element={<ManufacturingInPremises />} />
+      <Route path="/manufacturing/in-transit" element={<ManufacturingInTransit />} />
+      <Route path="/warehouse/in-premises" element={<WInPremises />} />
+      <Route path="/warehouse/in-transit" element={<WarehouseInTransit />} />
+      <Route path="/in-premise" element={<ManufacturingInPremises />} />
+      <Route path="/in-transit" element={<ManufacturingInTransit />} />
+      <Route path="/warehouse/in-premise" element={<WInPremises />} />
+      <Route path="/In-Premises" element={<ManufacturingInPremises />} />
       
+  <Route path="/vts/trip-gps" element={<VtsElockTrip/>} />
 
-    </BrowserRouter>
+ <Route path="/vts/Tp-pass" element={<TpPassSummary/>} />
+
+ <Route path="/VTS/total_Tp_Pass" element={<VehicleTotalTPPassMain/>} />
+ <Route path="/VTS/expired_still_open" element={<VehicleExpireTPPassMain/>} />
+ <Route path="/VTS/active_Tp_Pass" element={<VehicleTPPassVTSMain/>} />
+ <Route path="/VTS/closed_Tp_Pass" element={<VehicleCloseTPPassMain/>} />
+
+
+
+ <Route path="/in_premises/exitWithoutPass" element={<VehicleExitWithoutPassMain/>} />
+ <Route path="/in_premises/exitWithValidPass" element={<VehicleExitWithVTPPMain/>} />
+ <Route path="/in_premises/vehicleExit" element={<VehicleExitMain/>} />
+ <Route path="/in_premises/vehicleEnter" element={<VehicleEntryMain/>} />
+ <Route path="/in_premises/totalVahicleCapture" element={<VehicleCaptureMain/>} />
+
+
+
+ <Route path="/in-Transit/vehicleRunningWithPass" element={<VehicleRunningWithPassMain/>} />
+ <Route path="/in-Transit/runningWithexpiredTpPass" element={<VehicleRunningExpirePassMain/>} />
+ <Route path="/in-Transit/vehicleRunningWithPass" element={<VehicleRunningWithPassMain/>} />
+
+  {/* <Route path="/vts/Tp-pass" element={<MfgUnit/>} /> */}
+
+  {/* /camaras/mfg */}
+
+  {/* <Route path="/Document-Mngt" element={<DocumentMngt/>} /> */}
+    </Routes>
+
+
+
 
 
   );

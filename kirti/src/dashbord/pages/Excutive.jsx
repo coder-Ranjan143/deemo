@@ -10,57 +10,41 @@ import Slider1 from "./slider/slider1/Slider1";
 import Slider2 from "./slider/slider2/Slider2";
 import Slider3 from "./slider/slider3/Slider3";
 import Slider4 from "./slider/slider4/Slider4";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const Excutive = () => {
-     const navigate = useNavigate();
-    
+  return (
+    <div className="h-screen overflow-hidden bg-gray-100">
+      <Header />
+      <Navbar />
 
-    return (
+      <div className="pt-[100px] h-screen">
+        <Swiper
+          direction="horizontal"
+          slidesPerView={1}
+          grabCursor={true}
+          speed={800}
+          loop={true}
+          className="h-full"
+        >
+          <SwiperSlide>
+            <Slider1 />
+          </SwiperSlide>
 
-        <div className="h-screen overflow-hidden bg-gray-100">
+          <SwiperSlide>
+            <Slider2 />
+          </SwiperSlide>
 
-            {/* FIXED HEADER */}
-            <Header />
+          <SwiperSlide>
+            <Slider3 />
+          </SwiperSlide>
 
-            {/* FIXED NAVBAR */}
-            <Navbar />
-
-            {/* SLIDER AREA */}
-            <div className="pt-[100px] h-screen"
-             >
-
-                <Swiper
-                    direction="horizontal"
-                    slidesPerView={1}
-                    grabCursor={true}
-                    speed={800}
-                    loop={true}
-                    className="h-full"
-                >
-
-                    <SwiperSlide>
-                        <Slider1 />
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Slider2 />
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Slider3 />
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <Slider4 />
-                    </SwiperSlide>
-
-                </Swiper>
-
-            </div>
-
-        </div>
-    );
+          <SwiperSlide>
+            <Slider4 />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
+  );
 };
 
 export default Excutive;

@@ -4,6 +4,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import AlertData from "../data/AlertData";
 import ExportDropdown from "../component/ExportDropdown";
+import AlertHeader from "./AlertHeader";
+// import Header from "../../../Components/Header";
+// import Navbar from "../../../Components/Navbar";
+
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,6 +16,9 @@ function AlertTablePage() {
   const navigate = useNavigate();
 
   return (
+    <>
+    {/* <Header/> */}
+    <AlertHeader/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -83,6 +90,7 @@ function AlertTablePage() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

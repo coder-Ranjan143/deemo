@@ -42,11 +42,11 @@ function Slider1() {
                         />
                     </div>
 
-  {/* card-2 /kirti*/}
-                    {/* <div
-                        onClick={() => navigate("/criticalCameraDown")}
+  {/* card-2  */}
+                    <div
+                        onClick={() => navigate("/cameras/mfg-unit")}
                         className="cursor-pointer"
-                    > */}
+                    >
                     <Card
                         icon={<CameraOff size={22} className="text-blue-600" />}
                         title="Critical Camera Down"
@@ -57,7 +57,7 @@ function Slider1() {
                         iconBg="bg-blue-100"
                         hoverEffect="from-blue-100"
                     />
-                    {/* </div> */}
+                    </div>
 
 {/* card-3  */}
                      <div

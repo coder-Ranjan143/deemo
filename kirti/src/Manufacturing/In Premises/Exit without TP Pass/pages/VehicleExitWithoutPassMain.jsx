@@ -14,8 +14,9 @@ function VehicleExitWithoutPassPMain() {
 
   return (
     <>
-    <VehicleExitWithoutPassPage/>
+    
     <div className="p-5 bg-gray-100 min-h-screen">
+      <VehicleExitWithoutPassPage/>
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
           <thead className="bg-red-800 text-white">

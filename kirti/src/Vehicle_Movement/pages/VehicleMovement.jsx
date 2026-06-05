@@ -4,11 +4,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleMovementData from "../data/VehicleMovementData";
 import ExportDropdown from "../Component/ExportDropdown";
+import VehicleMovementPage from "./VehicleMovementPage";
 
 function VehicleMovement() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <VehicleMovementPage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -57,6 +60,7 @@ function VehicleMovement() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

@@ -4,11 +4,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import GpsData from "../data/GpsData";
 import ExportDropdown from "../Component/ExportDropdown";
+import GpstrackPage from "./GpstrackPage";
 
 function Gpstrack() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <GpstrackPage/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -65,6 +68,7 @@ function Gpstrack() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

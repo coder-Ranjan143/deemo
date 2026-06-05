@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import PendingAlertData from "../data/PendingAlertData";
 import ExportDropdown from "../component/ExportDropdown";
+import PendingAlertHeader from "./PendingAlertHeader";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,6 +13,8 @@ function PendingAlertTablePage() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <PendingAlertHeader/>
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
@@ -83,6 +86,7 @@ function PendingAlertTablePage() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

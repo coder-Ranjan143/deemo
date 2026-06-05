@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import VehicleData from "../data/VehicleData";
 import ExportDropdown from "../component/ExportDropdown";
+import VehicleRunnigWithPassPage from "./VehicleRunningWithPassPage";
 
 
 import { downloadPDF,downloadExcel } from "../utils/exportFile";
@@ -12,7 +13,9 @@ function VehicleRunningWithPassMain() {
   const navigate = useNavigate();
 
   return (
+    <>
     <div className="p-5 bg-gray-100 min-h-screen">
+      <VehicleRunnigWithPassPage/>
       <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
         <table className="w-full border-collapse">
           <thead className="bg-red-800 text-white">
@@ -62,16 +65,17 @@ function VehicleRunningWithPassMain() {
 
                 <td className="p-4">
                   <button
+                    type="button"
                     onClick={() =>
                       navigate(`/details/${item.id}`)
                     }
-                    // className="bg-red-800 hover:bg-red-700 px-4 py-1 rounded-full text-white"
+                    className={`px-4 py-1 rounded-full text-white ${
+                      item.tripDetails === "View Elock"
+                        ? "bg-red-800 hover:bg-red-700"
+                        : "bg-blue-700 hover:bg-blue-600"
+                    }`}
                   >
-                    {item.tripDetails === "View Elock" ? (
-                      <button className="bg-red-800 hover:bg-red-700 px-4 py-1 rounded-full text-white">View Elock</button>
-                    ) : (
-                      <button className="bg-blue-700 hover:bg-blue-600 px-4 py-1 rounded-full text-white">View GPS</button>
-                    )}
+                    {item.tripDetails === "View Elock" ? "View Elock" : "View GPS"}
                   </button>
                 </td>
               
@@ -81,6 +85,7 @@ function VehicleRunningWithPassMain() {
         </table>
       </div>
     </div>
+    </>
   );
 }
 
