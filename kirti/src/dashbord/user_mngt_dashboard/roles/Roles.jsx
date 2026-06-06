@@ -2,6 +2,7 @@ import React from "react";
 import { Edit, Trash2, Download, Plus } from "lucide-react";
 import Header from "../../../Components/Header";
 import Navbar from "../../../Components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 
 const rolesData = [
@@ -111,6 +112,11 @@ const rolesData = [
 ];
 
 const Roles = () => {
+
+    const navigate = useNavigate();
+
+   
+
     return (
         <>
             <Header />
@@ -137,7 +143,10 @@ const Roles = () => {
                                             Export
                                         </button>
 
-                                        <button className="flex items-center gap-1 rounded-md bg-green-600 px-3 py-2 text-[10px] sm:text-xs font-medium text-white hover:bg-green-700">
+                                        <button onClick={() =>
+                                            navigate("/Add_Roles_Button")
+                                        }
+                                            className="flex items-center gap-1 rounded-md bg-green-600 px-3 py-2 text-[10px] sm:text-xs font-medium text-white hover:bg-green-700">
                                             <Plus size={14} />
                                             Add Role
                                         </button>
@@ -265,7 +274,7 @@ const Roles = () => {
                     </div>
 
                 </div>
-            </div>
+            </div >
         </>
     );
 };

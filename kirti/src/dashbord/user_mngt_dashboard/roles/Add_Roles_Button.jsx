@@ -2,8 +2,12 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 import Header from "../../../Components/Header";
 import Navbar from "../../../Components/Navbar";
+// import { useNavigate } from "react-router-dom";
 
 const PermissionCard = ({ title, permissions }) => {
+
+
+
     return (
         <div className="rounded-md border border-gray-200 bg-white">
             <div className="flex items-center justify-between border-b bg-gray-50 px-2 py-1.5">

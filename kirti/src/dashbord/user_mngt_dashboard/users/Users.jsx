@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../../Components/Header";
 import Navbar from "../../../Components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const usersList = [
     {
@@ -42,6 +43,9 @@ const usersList = [
 ];
 
 const Users = () => {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <Header />
@@ -63,7 +67,10 @@ const Users = () => {
                                 Export
                             </button>
 
-                            <button className="px-3 py-1.5 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition">
+                            <button onClick={() =>
+                                            navigate("/users/Add_Users")
+                                        }
+                            className="px-3 py-1.5 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition">
                                 + Add User
                             </button>
 
@@ -166,7 +173,8 @@ const Users = () => {
                                         </td>
 
                                         <td className="px-2 py-2 text-center">
-                                            <button className="border border-purple-500 text-purple-600 px-2 py-1 text-[11px] rounded-md hover:bg-purple-50 transition">
+                                            <button className="border border-purple-500 text-purple-600 px-2 py-1 text-[11px] rounded-md hover:bg-purple-50 transition" onClick={() =>
+                                            navigate("/manage-user") }>
                                                 Manage
                                             </button>
                                         </td>

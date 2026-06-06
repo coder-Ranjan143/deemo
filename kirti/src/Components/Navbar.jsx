@@ -177,7 +177,7 @@ const Navbar = () => {
                 break;
 
             case "Master Dashboard":
-                navigate("/manage");
+                navigate("/master");
                 break;
 
             case "Document List":
@@ -188,6 +188,13 @@ const Navbar = () => {
                 navigate("/mfgunit");
                 break;
 
+            case "Roles":
+                navigate("/User-Mngt/roles");
+                break;
+
+            case "Users":
+                navigate("/User-Mngt/users");
+                break;
 
 
             default:

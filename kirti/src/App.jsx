@@ -73,6 +73,18 @@ import VehicleCaptureMain from "./Manufacturing/In Premises/Total Vahicle Captur
 import VehicleRunningWithPassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassMain.jsx";
 import VehicleRunnigWithPassPage from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithVTPPass/pages/VehicleRunningWithPassPage.jsx";
 import VehicleRunningExpirePassMain from "./Manufacturing/In_Transit/Plant_Summery/VehicleRunnigWithExpiredPass/pages/VehicleRunningExpirePassMain.jsx";
+import Master from "./Master/Master Dashboard/Master.jsx";
+import DistilleryListing from "./Master/Master Dashboard/allDistilleries/DistilleryListing.jsx";
+import AllWarehouses from "./Master/Master Dashboard/allWarehouses/AllWarehouses.jsx";
+import DistilleryGroups from "./Master/Master Dashboard/distilleryGroups/DistilleryGroups.jsx";
+import HopePoints from "./Master/Master Dashboard/hopePoints/HopePoints.jsx";
+import VendorsList from "./Master/Master Dashboard/allVendors/VendorsList.jsx";
+import DivisionCard from "./Master/Master Dashboard/allDivisions/DivisionCard.jsx";
+import AddDivisionCard from "./Master/Master Dashboard/allDivisions/AddDivisionCard.jsx";
+import Roles from "./dashbord/user_mngt_dashboard/roles/Roles.jsx";
+import Add_Roles_Button from "./dashbord/user_mngt_dashboard/roles/Add_Roles_Button.jsx"
+import Users from "./dashbord/user_mngt_dashboard/users/Users.jsx"
+import Add_Users from "./dashbord/user_mngt_dashboard/users/Add_Users.jsx"
 
 
 function App() {
@@ -109,7 +121,7 @@ function App() {
       <Route path="/vts/gpsElockMissing" element={<VehicleNotFoundMain />} />
 
       <Route path="/documents" element={<DocumentMngt />} />
-      <Route path="/manage" element={<ManageUser />} />
+      <Route path="/master" element={<Master />} />
       <Route path="/activity" element={<Activity />} />
       <Route path="/edit" element={<Edit />} />
       <Route path="/assign-oprator" element={<AssignOperator />} />
@@ -190,11 +202,32 @@ function App() {
  <Route path="/in-Transit/runningWithexpiredTpPass" element={<VehicleRunningExpirePassMain/>} />
  <Route path="/in-Transit/vehicleRunningWithPass" element={<VehicleRunningWithPassMain/>} />
 
-  {/* <Route path="/vts/Tp-pass" element={<MfgUnit/>} /> */}
+
+
+
+ <Route path="/master/allDistilleries" element={<DistilleryListing/>} />
+ <Route path="/master/allWarehouses" element={<AllWarehouses/>} />
+ <Route path="/master/distillerygroups" element={<DistilleryGroups/>} />
+ <Route path="/master/hopepoints" element={<HopePoints/>} />
+ <Route path="/master/allvendors" element={<VendorsList/>} />
+ <Route path="/master/alldivisions" element={<AddDivisionCard/>} />
+
+
+ <Route path="/User-Mngt/roles" element={<Roles/>} />
+ <Route path="/User-Mngt/users" element={<Users/>} />
+ <Route path="/users/Add_Users" element={<Add_Users/>} />
+
+
+  <Route path="/vts/Tp-pass" element={<MfgUnit/>} />
 
   {/* /camaras/mfg */}
 
-  {/* <Route path="/Document-Mngt" element={<DocumentMngt/>} /> */}
+  <Route path="/manage-user" element={<ManageUser/>} />
+
+   <Route path="/activity-logs" element={<Activity/>} />
+
+
+
     </Routes>
 
 

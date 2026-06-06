@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
+import { useNavigate } from "react-router-dom";
 
 const cards = [
   {
@@ -17,7 +18,8 @@ const cards = [
     icon: History,
     border: "border-indigo-200",
     bg: "bg-indigo-50",
-   iconColor: "text-indigo-600 font-medium"
+   iconColor: "text-indigo-600 font-medium",
+   path:"/activity-logs"
   },
   {
     title: "Edit User",
@@ -26,6 +28,7 @@ const cards = [
     border: "border-blue-200",
     bg: "bg-blue-50",
     iconColor: "text-blue-600 fill-blue-600 ",
+    path:"/edit"
   },
   {
     title: "Assign Distillery Group",
@@ -34,6 +37,7 @@ const cards = [
     border: "border-green-200",
     bg: "bg-green-50",
     iconColor: "text-green-600 fill-green-600",
+    path:"/assign-oprator"
   },
   {
     title: "Assigned Groups",
@@ -42,7 +46,8 @@ const cards = [
     border: "border-teal-200",
     bg: "bg-teal-50",
     iconColor: "text-teal-600  fill-teal-600",
-  },
+    path:"/assign-group"
+  },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
   {
     title: "Delete User",
     desc: "Permanently remove this user",
@@ -50,12 +55,14 @@ const cards = [
     border: "border-red-200",
     bg: "bg-red-50",
     iconColor: "text-red-700 fill-red-700",
+    path:" /delet-user"
   },
 ];
 
 
 
 const ManageUser = () => {
+   const navigate = useNavigate();
    return (
     
     
@@ -86,6 +93,7 @@ const ManageUser = () => {
             return (
               <div
                 key={index}
+               onClick={() => navigate(card.path)}
                 className={`bg-white border ${card.border} rounded-2xl p-6 shadow-sm hover:shadow-md transition cursor-pointer`}
               >
                 <div className="flex items-center gap-4">

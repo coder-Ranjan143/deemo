@@ -1,4 +1,5 @@
 // src/pages/MasterDashboard.jsx
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
 import {
@@ -20,6 +21,7 @@ const cards = [
     text: "text-indigo-600",
     border: "border-indigo-200",
     hover: "hover:shadow-md hover:border-indigo-400",
+    path: "/master/allDistilleries"
 
   },
   {
@@ -30,7 +32,8 @@ const cards = [
     text: "text-blue-600",
     border: "border-blue-200",
     hover: "hover:shadow-md hover:border-blue-400",
-    
+    path: "/master/allWarehouses"
+
   },
   {
     title: "Distillery Groups",
@@ -40,6 +43,7 @@ const cards = [
     text: "text-green-600",
     border: "border-green-200",
     hover: "hover:shadow-md hover:border-green-400",
+    path:"/master/distillerygroups"
 
   },
   {
@@ -50,7 +54,7 @@ const cards = [
     text: "text-purple-600",
     border: "border-purple-200",
     hover: "hover:shadow-md hover:border-purple-400",
-
+    path:"/master/hopepoints"
   },
   {
     title: "All Vendors",
@@ -60,7 +64,7 @@ const cards = [
     text: "text-cyan-600",
     border: "border-cyan-200",
     hover: "hover:shadow-md hover:border-teal-400",
-
+    path:"/master/allvendors"
   },
   {
     title: "All Divisions",
@@ -69,12 +73,21 @@ const cards = [
     bg: "bg-orange-100",
     text: "text-orange-600",
     border: "border-orange-200",
-    hover:"hover: shadow-md hover:border-orange-400",
-
+    hover: "hover: shadow-md hover:border-orange-400",
+    path:"/master/alldivisions"
   },
 ];
 
 const Master = () => {
+
+  const navigate = useNavigate();
+  const handleClick = (path) => {
+    if (path) {
+      navigate(path)
+    }
+
+  }
+
   return (
     <div className="min-h-screen bg-[#f8f8fb] flex justify-center px-4 py-10">
       <div className="w-full max-w-5xl">
@@ -96,25 +109,32 @@ const Master = () => {
               key={index}
               className={`bg-white border ${card.border} ${card.hover} rounded-2xl p-6 shadow-sm transition-all duration-200 cursor-pointer `}
             >
-              <div className="flex items-start gap-4">
-                {/* Icon */}
-                <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center  ${card.bg} ${card.text}`}
-                >
-                  {card.icon}
-                </div>
 
-                {/* Text */}
-                <div>
-                  <h2 className={`text-xl font-semibold ${card.text}`}>
-                    {card.title}
-                  </h2>
+              <button
+                type="button"
+                className="w-full text-left"
+                onClick={() => handleClick(card.path)}
+              >
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div
+                    className={`w-14 h-14 rounded-full flex items-center justify-center  ${card.bg} ${card.text}`}
+                  >
+                    {card.icon}
+                  </div>
 
-                  <p className="text-gray-500 text-sm mt-2 leading-relaxed">
-                    {card.desc}
-                  </p>
+                  {/* Text */}
+                  <div>
+                    <h2 className={`text-xl font-semibold ${card.text}`}>
+                      {card.title}
+                    </h2>
+
+                    <p className="text-gray-500 text-sm mt-2 leading-relaxed">
+                      {card.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </button>
             </div>
           ))}
         </div>
